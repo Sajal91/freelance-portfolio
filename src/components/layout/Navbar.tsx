@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
-import { navLinks, siteConfig } from '@/content/site'
+import { navLinks } from '@/content/site'
 import { Button } from '@/components/ui/Button'
 import logo from '@/assets/logo.png'
 
