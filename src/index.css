@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+@theme {
+  --font-heading: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body: "Inter", system-ui, -apple-system, sans-serif;
+
+  --color-cream: #faf8f4;
+  --color-cream-dark: #f3f0ea;
+  --color-navy: #1e2a3b;
+  --color-navy-light: #2d3f56;
+  --color-charcoal: #3d4451;
+  --color-muted: #6b7280;
+  --color-warm: #c4855a;
+  --color-warm-light: #e8c4a8;
+  --color-border: #e5e1d9;
+  --color-surface: #ffffff;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply m-0 bg-cream font-body text-charcoal antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-heading text-navy;
+  }
+}
