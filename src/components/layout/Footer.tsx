@@ -7,11 +7,11 @@ export function Footer() {
     <footer className="border-t border-border bg-cream-dark">
       <div className="mx-auto max-w-6xl px-5 py-14 md:px-8 md:py-16">
         <div className="grid gap-10 md:grid-cols-4">
-          {/* Brand column */}
           <div className="md:col-span-2">
             <Link to="/" className="font-heading text-xl font-semibold text-navy">
               {siteConfig.name}
             </Link>
+            <p className="mt-1 text-sm text-warm">{siteConfig.tagline}</p>
             <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted">
               {siteConfig.footerBlurb}
             </p>
@@ -33,11 +33,10 @@ export function Footer() {
             <p className="mt-1 text-sm text-muted">{siteConfig.location}</p>
           </div>
 
-          {/* Services links */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-navy">Services</h3>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-navy">Products</h3>
             <ul className="mt-4 space-y-2">
-              {footerLinks.services.map((link) => (
+              {footerLinks.products.map((link) => (
                 <li key={link.label}>
                   <Link
                     to={link.path}
@@ -50,7 +49,6 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Company links */}
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider text-navy">Company</h3>
             <ul className="mt-4 space-y-2">
@@ -65,12 +63,29 @@ export function Footer() {
                 </li>
               ))}
             </ul>
+            <h3 className="mt-8 text-sm font-semibold uppercase tracking-wider text-navy">
+              Account
+            </h3>
+            <ul className="mt-4 space-y-2">
+              {footerLinks.account.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    to={link.path}
+                    className="text-sm text-muted transition-colors hover:text-navy"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 text-sm text-muted md:flex-row">
-          <p>© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
-          <p className="text-xs">Built with React, TypeScript & care.</p>
+          <p>
+            © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
+          </p>
+          <p className="text-xs">{siteConfig.gstNote}</p>
         </div>
       </div>
     </footer>

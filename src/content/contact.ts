@@ -3,9 +3,9 @@ import { siteConfig } from '@/content/site'
 /** Contact page content */
 export const contactPage = {
   eyebrow: 'Contact',
-  headline: 'Start with a conversation',
+  headline: 'Questions, custom projects, or general inquiries',
   subheadline:
-    'Share a bit about your project and I’ll get back to you within one working day. No hard sell — just an honest assessment of scope, timeline, and ballpark budget.',
+    'Reach out about custom services, product questions, or partnership opportunities. We typically respond within one working day.',
 }
 
 export const contactInfo = {
@@ -13,35 +13,27 @@ export const contactInfo = {
   phone: siteConfig.phone,
   responseTime: 'Within 1 working day (IST)',
   availability: 'Mon – Sat, 10:00 AM – 7:00 PM IST',
-  paymentNote: 'GST-compliant invoices · UPI, bank transfer, or Razorpay',
-}
-
-export const calendlyPlaceholder = {
-  headline: 'Prefer to book directly?',
-  subtext:
-    'Schedule a free 30-minute consultation at a time that suits you. Calendly integration coming soon.',
-  buttonLabel: 'Book a Free Consultation',
-  note: 'Calendly embed placeholder — link your scheduling URL here',
+  paymentNote: 'Subscription billing via Stripe · Custom projects invoiced in INR',
 }
 
 export const formFields = {
   name: { label: 'Name', placeholder: 'Your full name' },
   email: { label: 'Email', placeholder: 'you@company.in' },
-  company: { label: 'Company', placeholder: 'Company name (optional)' },
-  projectType: {
-    label: 'Project type',
+  service: {
+    label: 'Inquiry type',
     options: [
-      'Web / Full-Stack Development',
-      'AI Automation',
-      'SaaS / Dashboard',
-      'Workflow Automation',
-      'Not sure yet',
+      'Custom Web & Full-Stack Dev',
+      'Custom AI Automation',
+      'Custom SaaS / Dashboard',
+      'Mobile App Development',
+      'Product question',
+      'General inquiry',
     ],
   },
   message: {
-    label: 'Tell me about your project',
+    label: 'Your message',
     placeholder:
-      'What are you trying to build or fix? Share your timeline and approximate budget if you have one — even a rough range helps.',
+      'Tell us about your project, timeline, or question. For custom work, a rough budget range helps us respond with useful next steps.',
   },
   submitLabel: 'Send Message',
 }
@@ -49,7 +41,7 @@ export const formFields = {
 export const thankYouMessage = {
   headline: 'Thank you — message received',
   subtext:
-    'I’ll review your note and respond within one working day. In the meantime, feel free to browse case studies for examples of recent work with Indian businesses.',
-  ctaLabel: 'View Case Studies',
-  ctaPath: '/case-studies',
+    'We will review your note and respond within one working day. In the meantime, browse our automation products or pricing.',
+  ctaLabel: 'View Products',
+  ctaPath: '/products',
 }

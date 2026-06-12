@@ -1,23 +1,47 @@
 import { useState, type FormEvent } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import { FadeIn } from '@/components/animation/FadeIn'
 import { Button } from '@/components/ui/Button'
 import { Card } from '@/components/ui/Card'
 import { SectionContainer } from '@/components/ui/SectionContainer'
+import { submitInquiry } from '@/api/inquiries'
+import { ApiClientError } from '@/api/client'
 import {
-  calendlyPlaceholder,
   contactInfo,
   contactPage,
   formFields,
   thankYouMessage,
 } from '@/content/contact'
 
-/** Contact page — form UI with static thank-you state (no backend) */
+/** Contact page — inquiry form wired to API */
 export function Contact() {
+  const [searchParams] = useSearchParams()
+  const defaultService = searchParams.get('service') ?? ''
   const [submitted, setSubmitted] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    setSubmitted(true)
+    setError(null)
+    setSubmitting(true)
+
+    const form = event.currentTarget
+    const data = new FormData(form)
+
+    try {
+      await submitInquiry({
+        name: String(data.get('name') ?? ''),
+        email: String(data.get('email') ?? ''),
+        service: String(data.get('service') ?? ''),
+        message: String(data.get('message') ?? ''),
+      })
+      setSubmitted(true)
+    } catch (err) {
+      setError(err instanceof ApiClientError ? err.message : 'Failed to send message.')
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   if (submitted) {
@@ -55,9 +79,13 @@ export function Contact() {
 
       <SectionContainer variant="alt" className="!pt-8">
         <div className="grid gap-10 lg:grid-cols-[1fr_380px]">
-          {/* Contact form */}
           <FadeIn>
             <Card hover={false}>
+              {error && (
+                <p className="mb-6 rounded-lg border border-warm/30 bg-cream px-4 py-3 text-sm text-charcoal">
+                  {error}
+                </p>
+              )}
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid gap-6 sm:grid-cols-2">
                   <div>
@@ -89,33 +117,20 @@ export function Contact() {
                 </div>
 
                 <div>
-                  <label htmlFor="company" className="block text-sm font-medium text-navy">
-                    {formFields.company.label}
-                  </label>
-                  <input
-                    id="company"
-                    name="company"
-                    type="text"
-                    placeholder={formFields.company.placeholder}
-                    className="mt-2 w-full rounded-lg border border-border bg-cream px-4 py-3 text-sm transition-colors focus:border-navy/30 focus:outline-none focus:ring-2 focus:ring-warm/20"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="projectType" className="block text-sm font-medium text-navy">
-                    {formFields.projectType.label}
+                  <label htmlFor="service" className="block text-sm font-medium text-navy">
+                    {formFields.service.label}
                   </label>
                   <select
-                    id="projectType"
-                    name="projectType"
+                    id="service"
+                    name="service"
                     required
+                    defaultValue={defaultService}
                     className="mt-2 w-full rounded-lg border border-border bg-cream px-4 py-3 text-sm transition-colors focus:border-navy/30 focus:outline-none focus:ring-2 focus:ring-warm/20"
-                    defaultValue=""
                   >
                     <option value="" disabled>
-                      Select a project type
+                      Select inquiry type
                     </option>
-                    {formFields.projectType.options.map((option) => (
+                    {formFields.service.options.map((option) => (
                       <option key={option} value={option}>
                         {option}
                       </option>
@@ -137,14 +152,13 @@ export function Contact() {
                   />
                 </div>
 
-                <Button type="submit" size="lg" className="w-full sm:w-auto">
-                  {formFields.submitLabel}
+                <Button type="submit" size="lg" className="w-full sm:w-auto" disabled={submitting}>
+                  {submitting ? 'Sending…' : formFields.submitLabel}
                 </Button>
               </form>
             </Card>
           </FadeIn>
 
-          {/* Sidebar: contact info + calendly placeholder */}
           <div className="space-y-6">
             <FadeIn delay={0.1}>
               <Card hover={false}>
@@ -181,23 +195,10 @@ export function Contact() {
                     <dd className="text-charcoal">{contactInfo.availability}</dd>
                   </div>
                   <div>
-                    <dt className="text-muted">Payments</dt>
+                    <dt className="text-muted">Billing</dt>
                     <dd className="text-charcoal">{contactInfo.paymentNote}</dd>
                   </div>
                 </dl>
-              </Card>
-            </FadeIn>
-
-            <FadeIn delay={0.2}>
-              <Card hover={false} className="border-warm/20 bg-cream">
-                <h2 className="text-lg font-semibold">{calendlyPlaceholder.headline}</h2>
-                <p className="mt-3 text-sm leading-relaxed text-muted">
-                  {calendlyPlaceholder.subtext}
-                </p>
-                <Button variant="secondary" className="mt-6 w-full" disabled>
-                  {calendlyPlaceholder.buttonLabel}
-                </Button>
-                <p className="mt-3 text-center text-xs text-muted">{calendlyPlaceholder.note}</p>
               </Card>
             </FadeIn>
           </div>

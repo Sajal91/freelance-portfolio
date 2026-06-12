@@ -1,82 +1,67 @@
-import type { CaseStudyPreview, ServiceHighlight, TechLogo } from '@/types/content'
+import type { TechLogo } from '@/types/content'
 
-/** Home page content — edit here without touching components */
+/** Home page content */
 export const homeHero = {
-  eyebrow: 'Full-Stack Developer & AI Automation Specialist',
-  headline: 'Build reliable systems that save time and scale your business',
+  eyebrow: 'Automation Products Studio',
+  headline: 'Plug-and-play automation systems for real estate, social media & customer support',
   subheadline:
-    'I help Indian founders, MSMEs, and small teams ship custom web apps, AI-powered workflows, and dashboards — with a calm, process-led approach from discovery to deployment.',
-  ctaPrimary: { label: 'Book a Free Consultation', path: '/contact' },
-  ctaSecondary: { label: 'View Case Studies', path: '/case-studies' },
+    'Subscribe to a ready-made automation product and go live in days — no custom build required. Connect your accounts, we handle the rest.',
+  ctaPrimary: { label: 'Browse Products', path: '/products' },
+  ctaSecondary: { label: 'See Pricing', path: '/pricing' },
 }
 
-export const serviceHighlights: ServiceHighlight[] = [
-  {
-    id: 'web-dev',
-    title: 'Web & Full-Stack Development',
-    description:
-      'Production-ready MERN applications, APIs, and integrations — built for Indian businesses that need dependable, maintainable software.',
-    icon: '◈',
-  },
-  {
-    id: 'ai-automation',
-    title: 'AI Automation Systems',
-    description:
-      'Practical AI agents and workflows that cut manual work — without the hype or inflated tool costs.',
-    icon: '◎',
-  },
-  {
-    id: 'dashboards',
-    title: 'SaaS & Dashboard Development',
-    description:
-      'Real-time dashboards and internal tools that replace scattered spreadsheets with one clear view of your operations.',
-    icon: '▣',
-  },
-]
+export const featuredProductSlugs = [
+  'real-estate-lead-management',
+  'social-media-auto-posting',
+  'ai-chatbot',
+] as const
 
-export const featuredCaseStudies: CaseStudyPreview[] = [
+export const howItWorks = [
   {
-    slug: 'ops-dashboard-saas',
-    title: 'Unified Operations Dashboard for a Bengaluru SaaS Team',
-    client: 'B2B SaaS Startup',
-    industry: 'B2B SaaS',
-    summary:
-      'A fragmented reporting stack was costing the team hours every week. We consolidated data sources into a single live dashboard.',
-    result: '12+ hours saved per week on reporting',
-    tags: ['React', 'Node.js', 'Supabase'],
+    step: 1,
+    title: 'Subscribe',
+    description:
+      'Pick a product and tier that fits your team. Checkout takes minutes — no lengthy sales calls.',
   },
   {
-    slug: 'lead-qualification-automation',
-    title: 'AI-Powered Lead Qualification for a Mumbai Consultancy',
-    client: 'Professional Services Firm',
-    industry: 'Consulting',
-    summary:
-      'Manual lead triage was slowing follow-ups. An n8n workflow now enriches, scores, and routes inbound leads automatically.',
-    result: 'Response time cut from 24 hours to under 2 hours',
-    tags: ['n8n', 'OpenAI', 'Zoho CRM'],
+    step: 2,
+    title: 'Onboarding & setup',
+    description:
+      'We walk you through configuration, connect your tools, and tailor defaults to your workflow.',
+  },
+  {
+    step: 3,
+    title: 'Connect accounts & data',
+    description:
+      'Link your CRM, ad platforms, social accounts, or website — securely and with clear permissions.',
+  },
+  {
+    step: 4,
+    title: 'Automation runs',
+    description:
+      'Your system goes live. Leads flow, posts publish, chatbots respond — with monitoring and support included.',
   },
 ]
 
 export const trustStrip = {
-  headline: 'Built with tools you can trust',
-  subtext:
-    'Modern, proven technologies — chosen for reliability and sensible running costs.',
+  headline: 'Trusted by teams across India',
+  subtext: 'Placeholder social proof — add client logos, testimonials, or metrics here.',
   logos: [
-    { name: 'React' },
-    { name: 'Node.js' },
-    { name: 'TypeScript' },
-    { name: 'n8n' },
-    { name: 'Supabase' },
-    { name: 'Razorpay' },
+    { name: 'Real Estate' },
+    { name: 'Agencies' },
+    { name: 'D2C Brands' },
+    { name: 'Consultancies' },
+    { name: 'SaaS Teams' },
+    { name: 'MSMEs' },
   ] satisfies TechLogo[],
 }
 
 export const homeCTA = {
-  headline: 'Let’s talk about what you’re building',
+  headline: 'Need something built from scratch?',
   subtext:
-    'Whether you need a full application, an automation system, or a clear technical roadmap — start with a no-pressure conversation. Based in India, working in IST.',
-  primaryLabel: 'Schedule a Consultation',
-  primaryPath: '/contact',
-  secondaryLabel: 'Explore Services',
-  secondaryPath: '/services',
+    'Beyond our subscription products, we offer bespoke development and custom automation systems for unique requirements.',
+  primaryLabel: 'Explore Custom Services',
+  primaryPath: '/custom-services',
+  secondaryLabel: 'Contact Us',
+  secondaryPath: '/contact',
 }

@@ -2,59 +2,65 @@ import type { ProcessStep } from '@/types/content'
 
 /** About page content */
 export const aboutPage = {
-  eyebrow: 'About',
-  headline: 'Technical depth, delivered calmly',
+  eyebrow: 'About Studio',
+  headline: 'Automation products, built with care',
   subheadline:
-    'I’m an India-based solo full-stack developer specialising in MERN applications and AI workflow automation — focused on work that lasts, not flashy demos.',
+    'We build subscription-ready automation systems so businesses can go live fast — and offer custom development when off-the-shelf is not enough.',
 }
 
 export const founderStory = {
   name: 'Your Name',
-  role: 'Full-Stack Developer & AI Automation Specialist',
+  role: 'Founder · Automation Products Studio',
   intro:
-    'After years building products for Indian startups and agencies, I started Studio to offer a direct, thoughtful way to work with technical talent — without the overhead or inflated pricing of a large agency.',
+    'Studio started as a freelance practice building custom systems for Indian startups and MSMEs. Today we productise the automations we saw teams need most — while still offering bespoke work for unique requirements.',
   paragraphs: [
-    'My background spans full-stack web development, systems integration, and the practical application of AI to real business workflows. I’ve shipped customer-facing SaaS products, internal ops tools, and automation systems that Indian teams actually use — not shelfware that gathers dust after launch.',
-    'I work best with founders, MSMEs, D2C brands, and small product teams who value clarity over complexity. If you need someone who can own a project end-to-end — from architecture to deployment — communicate in English (or Hindi), and respect your budget, we’ll likely work well together.',
+    'Our subscription products cover the highest-demand workflows: real estate lead management, social media publishing, and AI-powered customer support. Each is designed to deploy in days, not months.',
+    'When a business needs something entirely custom — a new SaaS product, a complex integration, or a mobile app — our custom services team scopes and delivers with the same transparent, process-led approach.',
   ],
   highlights: [
-    { label: 'Years of experience', value: '8+' },
-    { label: 'Projects delivered', value: '40+' },
+    { label: 'Products live', value: '3+' },
+    { label: 'Automations deployed', value: '40+' },
     { label: 'Primary stack', value: 'MERN + n8n' },
   ],
+}
+
+export const mission = {
+  headline: 'Our mission',
+  text: 'Make reliable automation accessible to growing businesses — through products you can subscribe to today and custom systems when you need something unique.',
 }
 
 export const methodology: ProcessStep[] = [
   {
     step: 1,
-    title: 'Discover',
+    title: 'Productise what works',
     description:
-      'We start with your goals, budget, and existing systems. No assumptions — just a clear picture of what success looks like for your business.',
+      'We turn proven client workflows into subscription products — tested, documented, and ready to deploy.',
   },
   {
     step: 2,
-    title: 'Design',
+    title: 'Onboard fast',
     description:
-      'I propose a scoped solution with milestones, tech choices explained simply, and a realistic timeline — with transparent pricing in INR before any build begins.',
+      'Clear setup guides, account connections, and support so you go live in days, not quarters.',
   },
   {
     step: 3,
-    title: 'Build',
+    title: 'Iterate with customers',
     description:
-      'Iterative development with regular check-ins over call or WhatsApp. You see progress early and often, with room to refine as we learn.',
+      'Product roadmaps driven by real usage — features that solve actual operational pain.',
   },
   {
     step: 4,
-    title: 'Deploy & Support',
+    title: 'Custom when needed',
     description:
-      'Thorough handover, documentation, and optional ongoing support. GST-compliant invoicing. The goal is systems your team can own confidently.',
+      'Bespoke builds for teams whose needs go beyond our catalog — scoped transparently in INR.',
   },
 ]
 
 export const aboutCTA = {
-  headline: 'Interested in working together?',
-  subtext:
-    'Tell me about your project — I typically respond within one working day (IST).',
-  primaryLabel: 'Get in Touch',
-  primaryPath: '/contact',
+  headline: 'Explore our automation products',
+  subtext: 'Subscribe to a ready-made system or reach out for a custom build.',
+  primaryLabel: 'View Products',
+  primaryPath: '/products',
+  secondaryLabel: 'Custom Services',
+  secondaryPath: '/custom-services',
 }
