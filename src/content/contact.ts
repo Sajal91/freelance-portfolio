@@ -5,7 +5,7 @@ export const contactPage = {
   eyebrow: 'Contact',
   headline: 'Start with a conversation',
   subheadline:
-    'Share a bit about your project and I’ll get back to you within one working day. No hard sell — just an honest assessment of scope, timeline, and ballpark budget.',
+    'Share a bit about your project and I’ll get back to you within one working day. No hard sell - just an honest assessment of scope, timeline, and ballpark budget.',
 }
 
 export const contactInfo = {
@@ -21,7 +21,7 @@ export const calendlyPlaceholder = {
   subtext:
     'Schedule a free 30-minute consultation at a time that suits you. Calendly integration coming soon.',
   buttonLabel: 'Book a Free Consultation',
-  note: 'Calendly embed placeholder — link your scheduling URL here',
+  note: 'Calendly embed placeholder - link your scheduling URL here',
 }
 
 export const formFields = {
@@ -42,13 +42,13 @@ export const formFields = {
   message: {
     label: 'Tell me about your project',
     placeholder:
-      'What are you trying to build or fix? Share your timeline and approximate budget if you have one — even a rough range helps.',
+      'What are you trying to build or fix? Share your timeline and approximate budget if you have one - even a rough range helps.',
   },
   submitLabel: 'Send Message',
 }
 
 export const thankYouMessage = {
-  headline: 'Thank you — message received',
+  headline: 'Thank you - message received',
   subtext:
     'I’ll review your note and respond within one working day. In the meantime, feel free to browse case studies for examples of my recent work.',
   ctaLabel: 'View Case Studies',

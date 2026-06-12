@@ -20,7 +20,7 @@ export const caseStudies: CaseStudyDetail[] = [
     tags: ['Web App', 'AI', 'Automation'],
     highlight: 'Production',
     problem:
-      'The team needed a way to turn varied user inputs into complete architectural design outputs — sketches, elevations, floor plans, and base 3D models — without manual rework for each service type. Results had to stay accurate and context-aware depending on what the user selected.',
+      'The team needed a way to turn varied user inputs into complete architectural design outputs - sketches, elevations, floor plans, and base 3D models - without manual rework for each service type. Results had to stay accurate and context-aware depending on what the user selected.',
     process: [
       'Mapped user input flows and the architectural output types required for each service',
       'Designed prompt-engineered workflows with dynamic adaptation based on selected services',
@@ -59,7 +59,7 @@ export const caseStudies: CaseStudyDetail[] = [
       'Added error handling and monitoring so failed posts could be caught early',
     ],
     solution:
-      'An automation agent that schedules content, manages posting cadence, and connects to external social media platforms — reducing manual effort while keeping the team in control of what gets published.',
+      'An automation agent that schedules content, manages posting cadence, and connects to external social media platforms - reducing manual effort while keeping the team in control of what gets published.',
     results: [
       'Automated content scheduling replaced manual posting routines',
       'Scalable workflows support new platforms and integrations as needed',
@@ -91,7 +91,7 @@ export const caseStudies: CaseStudyDetail[] = [
       'Implemented real-time chat so crew members can encourage each other live',
     ],
     solution:
-      'Pushup Crew — a fitness app where users join or create crews, log pushups every day, compete on crew leaderboards, receive timely notifications, and chat in real time to keep motivation high.',
+      'Pushup Crew - a fitness app where users join or create crews, log pushups every day, compete on crew leaderboards, receive timely notifications, and chat in real time to keep motivation high.',
     results: [
       'Crew-based structure turns solo workouts into friendly competition',
       'Daily tracking and leaderboards give members a clear reason to show up',

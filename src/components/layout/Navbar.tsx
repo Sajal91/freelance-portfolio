@@ -11,7 +11,7 @@ export function Navbar() {
 
   const linkClass = ({ isActive }: { isActive: boolean }) =>
     `text-sm font-medium transition-colors ${
-      isActive ? 'text-navy' : 'text-muted hover:text-navy'
+      isActive ? 'text-navy font-semibold' : 'text-muted hover:text-navy'
     }`
 
   return (

@@ -1,31 +1,26 @@
 import { Link } from 'react-router-dom'
 import { FadeIn } from '@/components/animation/FadeIn'
 import { Card } from '@/components/ui/Card'
+import { PageBanner } from '@/components/ui/PageBanner'
 import { SectionContainer } from '@/components/ui/SectionContainer'
 import { CTASection } from '@/components/ui/CTASection'
 import { CaseStudyBadges } from '@/components/case-studies/CaseStudyBadges'
 import { caseStudies, caseStudiesPage } from '@/content/caseStudies'
 import { defaultCTA } from '@/content/site'
+import bgImg from '@/assets/casestudy-bg.webp'
 
 /** Case studies list page */
 export function CaseStudies() {
   return (
     <>
-      <SectionContainer noAnimation className="pb-8!">
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-medium uppercase tracking-widest text-warm">
-            {caseStudiesPage.eyebrow}
-          </p>
-          <h1 className="mt-4 text-4xl font-semibold tracking-tight md:text-5xl">
-            {caseStudiesPage.headline}
-          </h1>
-          <p className="mt-6 text-base leading-relaxed text-muted md:text-lg">
-            {caseStudiesPage.subheadline}
-          </p>
-        </div>
-      </SectionContainer>
+      <PageBanner
+        image={bgImg}
+        eyebrow={caseStudiesPage.eyebrow}
+        headline={caseStudiesPage.headline}
+        subheadline={caseStudiesPage.subheadline}
+      />
 
-      <SectionContainer variant="alt" className="pt-8!">
+      <SectionContainer variant="alt" className="">
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {caseStudies.map((study, index) => (
             <FadeIn key={study.slug} delay={index * 0.08}>

@@ -54,7 +54,7 @@ const sizeStyles: Record<ButtonSize, string> = {
 const baseStyles =
   'inline-flex items-center justify-center gap-2 rounded-lg font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-warm/50 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none'
 
-/** Reusable button — renders as <button>, <Link>, or <a> depending on props */
+/** Reusable button - renders as <button>, <Link>, or <a> depending on props */
 export function Button({
   children,
   variant = 'primary',

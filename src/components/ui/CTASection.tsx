@@ -31,7 +31,11 @@ export function CTASection({ content, variant = 'navy' }: CTASectionProps) {
               to={content.secondaryPath}
               variant="ghost"
               size="lg"
-              className={variant === 'navy' ? 'text-cream hover:bg-white/10' : ''}
+              className={
+                variant === 'navy'
+                  ? 'border text-cream! border-cream bg-white/10 hover:text-cream! hover:bg-white/20'
+                  : ''
+              }
             >
               {content.secondaryLabel}
             </Button>

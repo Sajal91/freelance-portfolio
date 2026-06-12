@@ -7,7 +7,7 @@ import { CaseStudyDetail } from '@/pages/CaseStudyDetail'
 import { About } from '@/pages/About'
 import { Contact } from '@/pages/Contact'
 
-/** App root — defines all page routes */
+/** App root - defines all page routes */
 export default function App() {
   return (
     <BrowserRouter>

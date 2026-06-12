@@ -2,6 +2,7 @@ import { useState, type FormEvent } from 'react'
 import { FadeIn } from '@/components/animation/FadeIn'
 import { Button } from '@/components/ui/Button'
 import { Card } from '@/components/ui/Card'
+import { PageBanner } from '@/components/ui/PageBanner'
 import { SectionContainer } from '@/components/ui/SectionContainer'
 import {
   calendlyPlaceholder,
@@ -10,8 +11,9 @@ import {
   formFields,
   thankYouMessage,
 } from '@/content/contact'
+import bgImg from '@/assets/contact-bg.jpg'
 
-/** Contact page — form UI with static thank-you state (no backend) */
+/** Contact page - form UI with static thank-you state (no backend) */
 export function Contact() {
   const [submitted, setSubmitted] = useState(false)
 
@@ -39,21 +41,14 @@ export function Contact() {
 
   return (
     <>
-      <SectionContainer noAnimation className="pb-8!">
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-medium uppercase tracking-widest text-warm">
-            {contactPage.eyebrow}
-          </p>
-          <h1 className="mt-4 text-4xl font-semibold tracking-tight md:text-5xl">
-            {contactPage.headline}
-          </h1>
-          <p className="mt-6 text-base leading-relaxed text-muted md:text-lg">
-            {contactPage.subheadline}
-          </p>
-        </div>
-      </SectionContainer>
+      <PageBanner
+        image={bgImg}
+        eyebrow={contactPage.eyebrow}
+        headline={contactPage.headline}
+        subheadline={contactPage.subheadline}
+      />
 
-      <SectionContainer variant="alt" className="pt-8!">
+      <SectionContainer variant="alt" className="">
         <div className="grid gap-10 lg:grid-cols-[1fr_380px]">
           {/* Contact form */}
           <FadeIn>

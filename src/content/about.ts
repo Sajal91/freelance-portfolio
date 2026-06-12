@@ -5,17 +5,17 @@ export const aboutPage = {
   eyebrow: 'About',
   headline: 'Building scalable systems with clarity',
   subheadline:
-    'I’m a full-stack developer focused on efficient API design, responsive interfaces, and practical AI automation — from requirement analysis through deployment.',
+    'I’m a full-stack developer focused on efficient API design, responsive interfaces, and practical AI automation - from requirement analysis through deployment.',
 }
 
 export const founderStory = {
   name: 'Sajal Kapoor',
   role: 'Full-Stack Developer & AI Automation Specialist',
   intro:
-    'I build and deploy scalable web applications with a focus on efficient API design and optimized database queries — helping teams ship reliable software without unnecessary complexity.',
+    'I build and deploy scalable web applications with a focus on efficient API design and optimized database queries - helping teams ship reliable software without unnecessary complexity.',
   paragraphs: [
     'I develop production systems spanning web apps, mobile apps, backends, and integrations. I’ve built an AI-powered design automation platform, a social fitness app with crew-based competition and real-time chat, and intelligent social media automation connected to external services.',
-    'I work across the full software development lifecycle — from schema design and indexing to code reviews and deployment.',
+    'I work across the full software development lifecycle - from schema design and indexing to code reviews and deployment.',
   ],
   highlights: [
     { label: 'Current role', value: 'Full-Stack Developer' },
@@ -29,19 +29,19 @@ export const methodology: ProcessStep[] = [
     step: 1,
     title: 'Discover',
     description:
-      'We start with your goals, existing systems, and constraints. No assumptions — just a clear picture of what success looks like for your product or workflow.',
+      'We start with your goals, existing systems, and constraints. No assumptions - just a clear picture of what success looks like for your product or workflow.',
   },
   {
     step: 2,
     title: 'Design',
     description:
-      'I propose a scoped solution with milestones, tech choices explained simply, and a realistic timeline — with transparent pricing in INR before any build begins.',
+      'I propose a scoped solution with milestones, tech choices explained simply, and a realistic timeline - with transparent pricing in INR before any build begins.',
   },
   {
     step: 3,
     title: 'Build',
     description:
-      'Iterative development with regular check-ins. You see progress early and often, with room to refine as we learn — following Agile practices throughout.',
+      'Iterative development with regular check-ins. You see progress early and often, with room to refine as we learn - following Agile practices throughout.',
   },
   {
     step: 4,
@@ -54,7 +54,7 @@ export const methodology: ProcessStep[] = [
 export const aboutCTA = {
   headline: 'Interested in working together?',
   subtext:
-    'Tell me about your project — I typically respond within one working day (IST).',
+    'Tell me about your project - I typically respond within one working day (IST).',
   primaryLabel: 'Get in Touch',
   primaryPath: '/contact',
 }

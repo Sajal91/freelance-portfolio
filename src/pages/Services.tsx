@@ -1,9 +1,11 @@
 import { FadeIn } from '@/components/animation/FadeIn'
 import { ServiceCard } from '@/components/services/ServiceCard'
+import { PageBanner } from '@/components/ui/PageBanner'
 import { SectionContainer } from '@/components/ui/SectionContainer'
 import { CTASection } from '@/components/ui/CTASection'
 import type { ServiceDetail } from '@/types/content'
 import { featuredServices, otherServices, servicesCTA, servicesPage } from '@/content/services'
+import serviceBg from '@/assets/services-bg.webp'
 
 function ServiceDetailContent({ service }: { service: ServiceDetail }) {
   return (
@@ -44,25 +46,18 @@ function ServiceDetailContent({ service }: { service: ServiceDetail }) {
   )
 }
 
-/** Services page — detailed breakdown of each offering */
+/** Services page - detailed breakdown of each offering */
 export function Services() {
   return (
     <>
-      <SectionContainer noAnimation className="pb-8!">
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-medium uppercase tracking-widest text-warm">
-            {servicesPage.eyebrow}
-          </p>
-          <h1 className="mt-4 text-4xl font-semibold tracking-tight md:text-5xl">
-            {servicesPage.headline}
-          </h1>
-          <p className="mt-6 text-base leading-relaxed text-muted md:text-lg">
-            {servicesPage.subheadline}
-          </p>
-        </div>
-      </SectionContainer>
+      <PageBanner
+        image={serviceBg}
+        eyebrow={servicesPage.eyebrow}
+        headline={servicesPage.headline}
+        subheadline={servicesPage.subheadline}
+      />
 
-      <SectionContainer variant="alt" className="pt-8!">
+      <SectionContainer variant="alt" className="">
         <div className="space-y-8">
           {featuredServices.map((service, index) => (
             <FadeIn key={service.id} delay={index * 0.08}>
@@ -74,9 +69,9 @@ export function Services() {
         </div>
 
         <div className="mt-16">
-          <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">More services</h2>
-          <p className="mt-3 max-w-2xl text-muted">
-            Additional offerings to round out your product — from mobile apps to dedicated backend
+          <h2 className="text-2xl text-center font-semibold tracking-tight md:text-3xl">More services</h2>
+          <p className="mt-3 max-w-2xl text-muted text-center mx-auto">
+            Additional offerings to round out your product - from mobile apps to dedicated backend
             work.
           </p>
           <div className="mt-8 space-y-8">

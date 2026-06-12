@@ -8,7 +8,7 @@ import { caseStudies } from '@/content/caseStudies'
 import { homeCTA, homeHero, serviceHighlights, trustStrip } from '@/content/home'
 import { CaseStudyBadges } from '@/components/case-studies/CaseStudyBadges'
 
-/** Home page — hero, services preview, case studies, trust strip, CTA */
+/** Home page - hero, services preview, case studies, trust strip, CTA */
 export function Home() {
   return (
     <>
@@ -48,7 +48,7 @@ export function Home() {
         <div className="text-center">
           <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">What I help with</h2>
           <p className="mx-auto mt-4 max-w-2xl text-muted">
-            Core offerings — each scoped clearly, delivered with a process you can follow.
+            Core offerings - each scoped clearly, delivered with a process you can follow.
           </p>
         </div>
         <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -83,7 +83,7 @@ export function Home() {
           <div>
             <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">Selected work</h2>
             <p className="mt-4 max-w-xl text-muted">
-              Recent projects with measurable outcomes — problem, process, and result.
+              Recent projects with measurable outcomes - problem, process, and result.
             </p>
           </div>
           <Button to="/case-studies" variant="secondary" size="sm">
@@ -122,7 +122,7 @@ export function Home() {
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4 md:gap-6">
           {trustStrip.logos.map((logo, index) => (
             <FadeIn key={logo.name} delay={index * 0.05}>
-              <div className="rounded-xl border border-border bg-surface px-6 py-4 text-sm font-semibold tracking-wide text-navy/70 transition-colors hover:border-navy/20 hover:text-navy">
+              <div className="rounded-xl border border-border bg-surface px-6 py-4 text-sm font-semibold tracking-wide text-navy/70 transition-colors hover:border-warm hover:text-navy cursor-default">
                 {logo.name}
               </div>
             </FadeIn>

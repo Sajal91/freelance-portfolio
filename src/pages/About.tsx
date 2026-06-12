@@ -1,36 +1,32 @@
 import { FadeIn } from '@/components/animation/FadeIn'
 import { Card } from '@/components/ui/Card'
+import { PageBanner } from '@/components/ui/PageBanner'
 import { SectionContainer } from '@/components/ui/SectionContainer'
 import { CTASection } from '@/components/ui/CTASection'
 import { aboutCTA, aboutPage, founderStory, methodology } from '@/content/about'
-import profilePhoto from "@/assets/dp.jpeg"
+import serviceBg from '@/assets/about-bg.avif'
+import profilePhoto from '@/assets/dp.jpeg'
 
-/** About page — founder story and working process */
+/** About page - founder story and working process */
 export function About() {
   return (
     <>
-      <SectionContainer noAnimation className="pb-8!">
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-medium uppercase tracking-widest text-warm">
-            {aboutPage.eyebrow}
-          </p>
-          <h1 className="mt-4 text-4xl font-semibold tracking-tight md:text-5xl">
-            {aboutPage.headline}
-          </h1>
-          <p className="mt-6 text-base leading-relaxed text-muted md:text-lg">
-            {aboutPage.subheadline}
-          </p>
-        </div>
-      </SectionContainer>
+      <PageBanner
+        image={serviceBg}
+        eyebrow={aboutPage.eyebrow}
+        headline={aboutPage.headline}
+        subheadline={aboutPage.subheadline}
+      />
 
-      {/* Founder story */}
-      <SectionContainer variant="alt" className="pt-8!">
+      <SectionContainer variant="alt" className="">
         <div className="grid gap-12 lg:grid-cols-[280px_1fr]">
           <FadeIn>
-            <div className="flex aspect-square items-center justify-center rounded-2xl border border-border bg-cream">
-              {/* Placeholder for founder photo */}
-              {/* <span className="font-heading text-6xl text-navy/20">SK</span> */}
-              <img src={profilePhoto} className='' />
+            <div className="flex aspect-square items-center justify-center overflow-hidden rounded-2xl border border-border bg-cream">
+              <img
+                src={profilePhoto}
+                alt={founderStory.name}
+                className="h-full w-full object-cover"
+              />
             </div>
           </FadeIn>
           <FadeIn delay={0.1}>
@@ -56,12 +52,11 @@ export function About() {
         </div>
       </SectionContainer>
 
-      {/* Methodology */}
       <SectionContainer>
         <div className="text-center">
           <h2 className="text-3xl font-semibold tracking-tight">How I work</h2>
           <p className="mx-auto mt-4 max-w-2xl text-muted">
-            A consistent process across every project — so you always know what&apos;s happening
+            A consistent process across every project - so you always know what&apos;s happening
             and what comes next.
           </p>
         </div>

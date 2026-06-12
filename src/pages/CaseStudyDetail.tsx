@@ -8,7 +8,7 @@ import { CaseStudyBadges } from '@/components/case-studies/CaseStudyBadges'
 import { getCaseStudyBySlug } from '@/content/caseStudies'
 import { defaultCTA } from '@/content/site'
 
-/** Individual case study — Problem → Process → Solution → Result */
+/** Individual case study - Problem → Process → Solution → Result */
 export function CaseStudyDetail() {
   const { slug } = useParams<{ slug: string }>()
   const study = slug ? getCaseStudyBySlug(slug) : undefined
