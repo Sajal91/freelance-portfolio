@@ -3,6 +3,7 @@ import { AnimatePresence } from 'framer-motion'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import { PageTransition } from '@/components/animation/PageTransition'
+import { ScrollToTop } from '@/components/animation/ScrollToTop'
 
 /** Base layout wrapping all pages with Navbar, Footer, and route transitions */
 export function Layout() {
@@ -10,9 +11,10 @@ export function Layout() {
 
   return (
     <div className="flex min-h-screen flex-col">
+      <ScrollToTop />
       <Navbar />
       <main className="flex-1">
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode="sync" initial={false}>
           <PageTransition key={location.pathname}>
             <Outlet />
           </PageTransition>

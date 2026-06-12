@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/Button'
 import { Card } from '@/components/ui/Card'
 import { SectionContainer } from '@/components/ui/SectionContainer'
 import { CTASection } from '@/components/ui/CTASection'
+import { CaseStudyBadges } from '@/components/case-studies/CaseStudyBadges'
 import { getCaseStudyBySlug } from '@/content/caseStudies'
 import { defaultCTA } from '@/content/site'
 
@@ -29,22 +30,15 @@ export function CaseStudyDetail() {
   return (
     <>
       {/* Header */}
-      <SectionContainer noAnimation className="!pb-8">
+      <SectionContainer noAnimation className="pb-8!">
         <Link
           to="/case-studies"
           className="inline-flex items-center text-sm text-muted transition-colors hover:text-navy"
         >
           ← Back to Case Studies
         </Link>
-        <div className="mt-6 flex flex-wrap gap-2">
-          {study.tags.map((tag) => (
-            <span
-              key={tag}
-              className="rounded-full bg-cream-dark px-3 py-1 text-xs font-medium text-charcoal"
-            >
-              {tag}
-            </span>
-          ))}
+        <div className="mt-6">
+          <CaseStudyBadges tags={study.tags} highlight={study.highlight} />
         </div>
         <h1 className="mt-6 max-w-4xl text-4xl font-semibold leading-tight tracking-tight md:text-5xl">
           {study.title}
@@ -55,7 +49,7 @@ export function CaseStudyDetail() {
       </SectionContainer>
 
       {/* Key metrics */}
-      <SectionContainer variant="alt" className="!py-12">
+      <SectionContainer variant="alt" className="py-12!">
         <div className="grid gap-6 sm:grid-cols-3">
           {study.metrics.map((metric, index) => (
             <FadeIn key={metric.label} delay={index * 0.1}>
@@ -116,7 +110,7 @@ export function CaseStudyDetail() {
           <div className="mt-8 grid gap-4">
             {study.results.map((result, index) => (
               <FadeIn key={result} delay={index * 0.08}>
-                <Card hover={false} className="!p-5">
+                <Card hover={false} className="p-5!">
                   <p className="leading-relaxed text-charcoal">{result}</p>
                 </Card>
               </FadeIn>

@@ -3,6 +3,7 @@ import { FadeIn } from '@/components/animation/FadeIn'
 import { Card } from '@/components/ui/Card'
 import { SectionContainer } from '@/components/ui/SectionContainer'
 import { CTASection } from '@/components/ui/CTASection'
+import { CaseStudyBadges } from '@/components/case-studies/CaseStudyBadges'
 import { caseStudies, caseStudiesPage } from '@/content/caseStudies'
 import { defaultCTA } from '@/content/site'
 
@@ -10,7 +11,7 @@ import { defaultCTA } from '@/content/site'
 export function CaseStudies() {
   return (
     <>
-      <SectionContainer noAnimation className="!pb-8">
+      <SectionContainer noAnimation className="pb-8!">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-medium uppercase tracking-widest text-warm">
             {caseStudiesPage.eyebrow}
@@ -24,26 +25,15 @@ export function CaseStudies() {
         </div>
       </SectionContainer>
 
-      <SectionContainer variant="alt" className="!pt-8">
+      <SectionContainer variant="alt" className="pt-8!">
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {caseStudies.map((study, index) => (
             <FadeIn key={study.slug} delay={index * 0.08}>
               <Link to={`/case-studies/${study.slug}`} className="block h-full">
                 <Card className="flex h-full flex-col">
-                  <div className="flex flex-wrap gap-2">
-                    {study.tags.slice(0, 3).map((tag) => (
-                      <span
-                        key={tag}
-                        className="rounded-full bg-cream-dark px-3 py-1 text-xs font-medium text-charcoal"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
+                  <CaseStudyBadges tags={study.tags} highlight={study.highlight} limit={3} />
                   <h2 className="mt-4 text-lg font-semibold leading-snug">{study.title}</h2>
-                  <p className="mt-2 text-sm text-muted">
-                    {study.industry}
-                  </p>
+                  <p className="mt-2 text-sm text-muted">{study.industry}</p>
                   <p className="mt-4 flex-1 text-sm leading-relaxed text-charcoal">
                     {study.summary}
                   </p>

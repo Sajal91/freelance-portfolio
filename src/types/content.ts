@@ -30,6 +30,7 @@ export interface ServiceDetail {
     note?: string
   }
   features: string[]
+  featured?: boolean
 }
 
 export interface CaseStudyPreview {
@@ -40,6 +41,7 @@ export interface CaseStudyPreview {
   summary: string
   result: string
   tags: string[]
+  highlight?: string
 }
 
 export interface CaseStudyDetail extends CaseStudyPreview {

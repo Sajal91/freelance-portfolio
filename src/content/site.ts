@@ -2,14 +2,15 @@ import type { NavLink } from '@/types/content'
 
 /** Shared site-wide config: branding, navigation, footer */
 export const siteConfig = {
-  name: 'Studio',
+  name: 'Sajal Kapoor',
   tagline: 'Full-Stack & AI Automation',
-  email: 'hello@yourstudio.in',
-  phone: '+91 98765 43210',
-  location: 'India · Remote, nationwide',
+  email: 'kapoorsajal91@gmail.com',
+  phone: '+91 95826 71770',
+  location: 'East Delhi, India · Remote, nationwide',
+  linkedin: 'https://www.linkedin.com/in/sajal-kapoor-38a98a215/',
+  github: 'https://github.com/Sajal91',
   footerBlurb:
-    'Custom web apps, AI automation, and dashboards for Indian startups, MSMEs, and growing teams.',
-  gstNote: 'All prices exclusive of 18% GST. Invoices provided.',
+    'Custom web and app development, plus AI workflow automation for startups and growing teams — from API design to deployment.',
 }
 
 export const navLinks: NavLink[] = [
@@ -23,8 +24,8 @@ export const navLinks: NavLink[] = [
 export const footerLinks = {
   services: [
     { label: 'Web Development', path: '/services' },
+    { label: 'App Development', path: '/services' },
     { label: 'AI Automation', path: '/services' },
-    { label: 'SaaS Dashboards', path: '/services' },
     { label: 'Workflow Automation', path: '/services' },
   ],
   company: [

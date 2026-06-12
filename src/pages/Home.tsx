@@ -4,20 +4,16 @@ import { Button } from '@/components/ui/Button'
 import { Card } from '@/components/ui/Card'
 import { SectionContainer } from '@/components/ui/SectionContainer'
 import { CTASection } from '@/components/ui/CTASection'
-import {
-  featuredCaseStudies,
-  homeCTA,
-  homeHero,
-  serviceHighlights,
-  trustStrip,
-} from '@/content/home'
+import { caseStudies } from '@/content/caseStudies'
+import { homeCTA, homeHero, serviceHighlights, trustStrip } from '@/content/home'
+import { CaseStudyBadges } from '@/components/case-studies/CaseStudyBadges'
 
 /** Home page — hero, services preview, case studies, trust strip, CTA */
 export function Home() {
   return (
     <>
       {/* Hero */}
-      <SectionContainer noAnimation variant="default" className="!pb-12 md:!pb-16">
+      <SectionContainer noAnimation variant="default" className="pb-12! md:pb-16!">
         <div className="mx-auto max-w-3xl text-center">
           <FadeIn>
             <p className="text-sm font-medium uppercase tracking-widest text-warm">
@@ -52,10 +48,10 @@ export function Home() {
         <div className="text-center">
           <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">What I help with</h2>
           <p className="mx-auto mt-4 max-w-2xl text-muted">
-            Three core areas — each scoped clearly, delivered with a process you can follow.
+            Core offerings — each scoped clearly, delivered with a process you can follow.
           </p>
         </div>
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {serviceHighlights.map((service, index) => (
             <FadeIn key={service.id} delay={index * 0.1}>
               <Card className="flex h-full flex-col">
@@ -85,7 +81,7 @@ export function Home() {
       <SectionContainer variant="default" size="xl">
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <div>
-            <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">Featured work</h2>
+            <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">Selected work</h2>
             <p className="mt-4 max-w-xl text-muted">
               Recent projects with measurable outcomes — problem, process, and result.
             </p>
@@ -95,20 +91,11 @@ export function Home() {
           </Button>
         </div>
         <div className="mt-12 grid gap-6 md:grid-cols-2">
-          {featuredCaseStudies.map((study, index) => (
+          {caseStudies.map((study, index) => (
             <FadeIn key={study.slug} delay={index * 0.1}>
               <Link to={`/case-studies/${study.slug}`} className="block h-full">
                 <Card className="flex h-full flex-col">
-                  <div className="flex flex-wrap gap-2">
-                    {study.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="rounded-full bg-cream-dark px-3 py-1 text-xs font-medium text-charcoal"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
+                  <CaseStudyBadges tags={study.tags} highlight={study.highlight} />
                   <h3 className="mt-4 text-xl font-semibold leading-snug">{study.title}</h3>
                   <p className="mt-2 text-sm text-muted">
                     {study.industry} · {study.client}

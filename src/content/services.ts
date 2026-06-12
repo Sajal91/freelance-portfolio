@@ -1,12 +1,11 @@
 import type { ServiceDetail } from '@/types/content'
-import { siteConfig } from '@/content/site'
 
 /** Services page content */
 export const servicesPage = {
   eyebrow: 'Services',
-  headline: 'Clear offerings for complex technical work',
+  headline: 'What I build and automate',
   subheadline:
-    'Every engagement starts with understanding your goals and budget. These are the core ways I help Indian clients — scoped transparently, delivered with care.',
+    'Core offerings based on my production experience — web and app development, API design, and AI workflow automation scoped transparently from discovery to deployment.',
 }
 
 export const services: ServiceDetail[] = [
@@ -14,79 +13,104 @@ export const services: ServiceDetail[] = [
     id: 'web-fullstack',
     title: 'Web & Full-Stack Development',
     description:
-      'End-to-end development of web applications using the MERN stack and modern tooling. From MVP to production systems with clean architecture, testing, and deployment — suited for Indian startups and product teams scaling beyond no-code.',
+      'End-to-end web applications — responsive frontends, robust APIs, and database backends with schema design, indexing, and query optimization.',
     idealFor:
-      'Founders, D2C brands, and product teams who need a reliable technical partner to build or extend a customer-facing product.',
+      'Startups and product teams who need a dependable developer to build or extend a customer-facing web application from MVP to production.',
     pricing: {
       model: 'Fixed project fee',
       from: '₹3,50,000',
-      note: `Scoped after discovery; typical MVPs from ₹6.5L–₹12.5L. ${siteConfig.gstNote}`,
+      note: 'Scoped after discovery; typical MVPs from ₹6.5L–₹12.5L.',
     },
     features: [
-      'Custom React frontends with responsive, mobile-first UI',
-      'Node.js APIs, authentication, and database design',
-      'Integrations with Razorpay, WhatsApp Business API, email & CRM',
-      'Deployment, monitoring, and handover documentation',
+      'Responsive, mobile-first user interfaces',
+      'RESTful APIs with authentication and authorization',
+      'Database schema design with optimized queries',
+      'Production deployment with handover documentation',
     ],
+    featured: true,
   },
   {
     id: 'ai-automation',
     title: 'AI Automation Systems',
     description:
-      'Practical AI implementations — not demos. Custom agents, document processing, and decision-support workflows integrated into your existing stack, at a fraction of typical SaaS AI tool costs.',
+      'Practical AI implementations — intelligent integrations, prompt-engineered workflows, and agents that automate real business processes rather than demo-only prototypes.',
     idealFor:
-      'MSMEs and service businesses drowning in manual admin, document handling, or data-heavy repetitive tasks.',
+      'Teams looking to integrate AI into existing products — design automation, content generation, or decision-support workflows with multiple providers.',
     pricing: {
       model: 'Fixed project fee',
       from: '₹2,50,000',
-      note: `Includes scoping, build, testing, and team walkthrough. ${siteConfig.gstNote}`,
+      note: 'Includes scoping, build, testing, and team walkthrough.',
     },
     features: [
-      'LLM-powered agents with guardrails and human-in-the-loop',
-      'Document extraction, classification, and summarisation',
-      'Custom GPTs and API integrations',
+      'Multi-provider AI integration',
+      'Dynamic prompt engineering and context-aware workflows',
+      'Intelligent agents for content scheduling and process automation',
       'Usage cost modelling so bills stay predictable',
     ],
-  },
-  {
-    id: 'saas-dashboards',
-    title: 'SaaS & Dashboard Development',
-    description:
-      'Internal tools and client-facing dashboards that connect your data sources and surface the metrics that actually matter — replacing the Excel sheets your team has outgrown.',
-    idealFor:
-      'Teams outgrowing spreadsheets who need a single source of truth for operations, sales, or client reporting.',
-    pricing: {
-      model: 'Fixed project fee',
-      from: '₹3,00,000',
-      note: `Data source complexity affects scope. ${siteConfig.gstNote}`,
-    },
-    features: [
-      'Real-time data visualisation and filtering',
-      'Role-based access and multi-tenant architecture',
-      'Supabase or MongoDB backends with secure APIs',
-      'Export, alerts, and scheduled reporting',
-    ],
+    featured: true,
   },
   {
     id: 'workflow-automation',
     title: 'Workflow Automation',
     description:
-      'n8n and API-driven automations that connect your apps, eliminate copy-paste work, and keep data flowing accurately between Zoho, Google Workspace, Razorpay, and more.',
+      'Automations that connect your apps, eliminate repetitive manual work, and keep data flowing accurately between services and external platforms.',
     idealFor:
-      'Agencies, consultancies, and ops-heavy businesses with disconnected tools and manual handoffs between teams.',
+      'Businesses with disconnected tools, manual handoffs, or content workflows that need reliable, scalable automation.',
     pricing: {
       model: 'Project or monthly retainer',
       from: '₹1,50,000',
-      note: `Ongoing support from ₹40,000/month. ${siteConfig.gstNote}`,
+      note: 'Ongoing support from ₹40,000/month.',
     },
     features: [
-      'n8n workflow design, build, and documentation',
-      'Zoho CRM, Freshsales, Razorpay, and accounting integrations',
-      'Error handling, logging, and WhatsApp/email alerts',
+      'Workflow design, build, and documentation',
+      'Social media, CRM, and third-party integrations',
+      'Error handling, logging, and alert notifications',
       'Audit of existing automations and optimisation',
+    ],
+    featured: true,
+  },
+  {
+    id: 'app-development',
+    title: 'App Development',
+    description:
+      'Mobile and cross-platform applications built for real user engagement — from onboarding and authentication to notifications, real-time features, and social interactions.',
+    idealFor:
+      'Founders and teams launching a consumer or community app who need a full build — fitness trackers, social platforms, productivity tools, or niche lifestyle products.',
+    pricing: {
+      model: 'Fixed project fee',
+      from: '₹4,00,000',
+      note: 'Scoped after discovery; feature set and platforms affect timeline.',
+    },
+    features: [
+      'Google and social sign-in for frictionless onboarding',
+      'Push notifications for reminders, activity, and milestones',
+      'Real-time chat, live updates, and in-app messaging',
+      'User profiles, groups, leaderboards, and social features',
+    ],
+  },
+  {
+    id: 'api-backend',
+    title: 'API & Backend Development',
+    description:
+      'Robust backends with efficient API design, database optimization, and clean architecture — the foundation your frontend and integrations depend on.',
+    idealFor:
+      'Products that need reliable APIs, database performance improvements, or backend systems that integrate with third-party services.',
+    pricing: {
+      model: 'Fixed project fee',
+      from: '₹2,00,000',
+      note: 'Scope depends on endpoints and integrations.',
+    },
+    features: [
+      'RESTful API design and documentation',
+      'Database indexing, schema design, and query optimization',
+      'Authentication, middleware, and error handling',
+      'Third-party API integrations and webhook handling',
     ],
   },
 ]
+
+export const featuredServices = services.filter((service) => service.featured)
+export const otherServices = services.filter((service) => !service.featured)
 
 export const servicesCTA = {
   headline: 'Not sure which service fits?',

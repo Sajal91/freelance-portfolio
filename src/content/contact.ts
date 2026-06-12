@@ -13,7 +13,7 @@ export const contactInfo = {
   phone: siteConfig.phone,
   responseTime: 'Within 1 working day (IST)',
   availability: 'Mon – Sat, 10:00 AM – 7:00 PM IST',
-  paymentNote: 'GST-compliant invoices · UPI, bank transfer, or Razorpay',
+  paymentNote: 'UPI, bank transfer, or Razorpay',
 }
 
 export const calendlyPlaceholder = {
@@ -32,8 +32,9 @@ export const formFields = {
     label: 'Project type',
     options: [
       'Web / Full-Stack Development',
+      'App Development',
       'AI Automation',
-      'SaaS / Dashboard',
+      'API / Backend Development',
       'Workflow Automation',
       'Not sure yet',
     ],
@@ -49,7 +50,7 @@ export const formFields = {
 export const thankYouMessage = {
   headline: 'Thank you — message received',
   subtext:
-    'I’ll review your note and respond within one working day. In the meantime, feel free to browse case studies for examples of recent work with Indian businesses.',
+    'I’ll review your note and respond within one working day. In the meantime, feel free to browse case studies for examples of my recent work.',
   ctaLabel: 'View Case Studies',
   ctaPath: '/case-studies',
 }

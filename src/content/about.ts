@@ -3,24 +3,24 @@ import type { ProcessStep } from '@/types/content'
 /** About page content */
 export const aboutPage = {
   eyebrow: 'About',
-  headline: 'Technical depth, delivered calmly',
+  headline: 'Building scalable systems with clarity',
   subheadline:
-    'I’m an India-based solo full-stack developer specialising in MERN applications and AI workflow automation — focused on work that lasts, not flashy demos.',
+    'I’m a full-stack developer focused on efficient API design, responsive interfaces, and practical AI automation — from requirement analysis through deployment.',
 }
 
 export const founderStory = {
-  name: 'Your Name',
+  name: 'Sajal Kapoor',
   role: 'Full-Stack Developer & AI Automation Specialist',
   intro:
-    'After years building products for Indian startups and agencies, I started Studio to offer a direct, thoughtful way to work with technical talent — without the overhead or inflated pricing of a large agency.',
+    'I build and deploy scalable web applications with a focus on efficient API design and optimized database queries — helping teams ship reliable software without unnecessary complexity.',
   paragraphs: [
-    'My background spans full-stack web development, systems integration, and the practical application of AI to real business workflows. I’ve shipped customer-facing SaaS products, internal ops tools, and automation systems that Indian teams actually use — not shelfware that gathers dust after launch.',
-    'I work best with founders, MSMEs, D2C brands, and small product teams who value clarity over complexity. If you need someone who can own a project end-to-end — from architecture to deployment — communicate in English (or Hindi), and respect your budget, we’ll likely work well together.',
+    'I develop production systems spanning web apps, mobile apps, backends, and integrations. I’ve built an AI-powered design automation platform, a social fitness app with crew-based competition and real-time chat, and intelligent social media automation connected to external services.',
+    'I work across the full software development lifecycle — from schema design and indexing to code reviews and deployment.',
   ],
   highlights: [
-    { label: 'Years of experience', value: '8+' },
-    { label: 'Projects delivered', value: '40+' },
-    { label: 'Primary stack', value: 'MERN + n8n' },
+    { label: 'Current role', value: 'Full-Stack Developer' },
+    { label: 'Core focus', value: 'Web + AI' },
+    { label: 'Strength', value: 'Automation' },
   ],
 }
 
@@ -29,7 +29,7 @@ export const methodology: ProcessStep[] = [
     step: 1,
     title: 'Discover',
     description:
-      'We start with your goals, budget, and existing systems. No assumptions — just a clear picture of what success looks like for your business.',
+      'We start with your goals, existing systems, and constraints. No assumptions — just a clear picture of what success looks like for your product or workflow.',
   },
   {
     step: 2,
@@ -41,13 +41,13 @@ export const methodology: ProcessStep[] = [
     step: 3,
     title: 'Build',
     description:
-      'Iterative development with regular check-ins over call or WhatsApp. You see progress early and often, with room to refine as we learn.',
+      'Iterative development with regular check-ins. You see progress early and often, with room to refine as we learn — following Agile practices throughout.',
   },
   {
     step: 4,
     title: 'Deploy & Support',
     description:
-      'Thorough handover, documentation, and optional ongoing support. GST-compliant invoicing. The goal is systems your team can own confidently.',
+      'Thorough handover, documentation, and optional ongoing support. The goal is systems your team can own confidently.',
   },
 ]
 

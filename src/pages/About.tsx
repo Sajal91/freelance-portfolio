@@ -3,12 +3,13 @@ import { Card } from '@/components/ui/Card'
 import { SectionContainer } from '@/components/ui/SectionContainer'
 import { CTASection } from '@/components/ui/CTASection'
 import { aboutCTA, aboutPage, founderStory, methodology } from '@/content/about'
+import profilePhoto from "@/assets/dp.jpeg"
 
 /** About page — founder story and working process */
 export function About() {
   return (
     <>
-      <SectionContainer noAnimation className="!pb-8">
+      <SectionContainer noAnimation className="pb-8!">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-medium uppercase tracking-widest text-warm">
             {aboutPage.eyebrow}
@@ -23,12 +24,13 @@ export function About() {
       </SectionContainer>
 
       {/* Founder story */}
-      <SectionContainer variant="alt" className="!pt-8">
+      <SectionContainer variant="alt" className="pt-8!">
         <div className="grid gap-12 lg:grid-cols-[280px_1fr]">
           <FadeIn>
             <div className="flex aspect-square items-center justify-center rounded-2xl border border-border bg-cream">
               {/* Placeholder for founder photo */}
-              <span className="font-heading text-6xl text-navy/20">YN</span>
+              {/* <span className="font-heading text-6xl text-navy/20">SK</span> */}
+              <img src={profilePhoto} className='' />
             </div>
           </FadeIn>
           <FadeIn delay={0.1}>

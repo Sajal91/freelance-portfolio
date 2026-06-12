@@ -39,7 +39,7 @@ export function Contact() {
 
   return (
     <>
-      <SectionContainer noAnimation className="!pb-8">
+      <SectionContainer noAnimation className="pb-8!">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-medium uppercase tracking-widest text-warm">
             {contactPage.eyebrow}
@@ -53,7 +53,7 @@ export function Contact() {
         </div>
       </SectionContainer>
 
-      <SectionContainer variant="alt" className="!pt-8">
+      <SectionContainer variant="alt" className="pt-8!">
         <div className="grid gap-10 lg:grid-cols-[1fr_380px]">
           {/* Contact form */}
           <FadeIn>

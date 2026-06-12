@@ -1,11 +1,11 @@
-import type { CaseStudyPreview, ServiceHighlight, TechLogo } from '@/types/content'
+import type { ServiceHighlight, TechLogo } from '@/types/content'
 
 /** Home page content — edit here without touching components */
 export const homeHero = {
   eyebrow: 'Full-Stack Developer & AI Automation Specialist',
-  headline: 'Build reliable systems that save time and scale your business',
+  headline: 'Scalable apps and AI workflows that ship to production',
   subheadline:
-    'I help Indian founders, MSMEs, and small teams ship custom web apps, AI-powered workflows, and dashboards — with a calm, process-led approach from discovery to deployment.',
+    'I build and deploy web and mobile applications with efficient APIs, responsive interfaces, and practical AI automation — from requirement analysis through deployment.',
   ctaPrimary: { label: 'Book a Free Consultation', path: '/contact' },
   ctaSecondary: { label: 'View Case Studies', path: '/case-studies' },
 }
@@ -15,66 +15,50 @@ export const serviceHighlights: ServiceHighlight[] = [
     id: 'web-dev',
     title: 'Web & Full-Stack Development',
     description:
-      'Production-ready MERN applications, APIs, and integrations — built for Indian businesses that need dependable, maintainable software.',
+      'Production-ready web applications with RESTful APIs, thoughtful database design, and responsive user interfaces built for real-world use.',
     icon: '◈',
+  },
+  {
+    id: 'app-dev',
+    title: 'App Development',
+    description:
+      'Mobile and cross-platform apps with secure authentication, push notifications, real-time features, and engaging user experiences.',
+    icon: '◉',
   },
   {
     id: 'ai-automation',
     title: 'AI Automation Systems',
     description:
-      'Practical AI agents and workflows that cut manual work — without the hype or inflated tool costs.',
+      'AI integrations and intelligent workflows that automate routine processes — from content pipelines to scheduling and decision-support agents.',
     icon: '◎',
   },
   {
-    id: 'dashboards',
-    title: 'SaaS & Dashboard Development',
+    id: 'api-dev',
+    title: 'API & Backend Development',
     description:
-      'Real-time dashboards and internal tools that replace scattered spreadsheets with one clear view of your operations.',
+      'Reliable backends with optimized database queries, clean architecture, and deployment to production — built to scale with your product.',
     icon: '▣',
   },
 ]
 
-export const featuredCaseStudies: CaseStudyPreview[] = [
-  {
-    slug: 'ops-dashboard-saas',
-    title: 'Unified Operations Dashboard for a Bengaluru SaaS Team',
-    client: 'B2B SaaS Startup',
-    industry: 'B2B SaaS',
-    summary:
-      'A fragmented reporting stack was costing the team hours every week. We consolidated data sources into a single live dashboard.',
-    result: '12+ hours saved per week on reporting',
-    tags: ['React', 'Node.js', 'Supabase'],
-  },
-  {
-    slug: 'lead-qualification-automation',
-    title: 'AI-Powered Lead Qualification for a Mumbai Consultancy',
-    client: 'Professional Services Firm',
-    industry: 'Consulting',
-    summary:
-      'Manual lead triage was slowing follow-ups. An n8n workflow now enriches, scores, and routes inbound leads automatically.',
-    result: 'Response time cut from 24 hours to under 2 hours',
-    tags: ['n8n', 'OpenAI', 'Zoho CRM'],
-  },
-]
-
 export const trustStrip = {
-  headline: 'Built with tools you can trust',
+  headline: 'What I bring to every project',
   subtext:
-    'Modern, proven technologies — chosen for reliability and sensible running costs.',
+    'A practical, end-to-end approach — from architecture through deployment.',
   logos: [
-    { name: 'React' },
-    { name: 'Node.js' },
-    { name: 'TypeScript' },
-    { name: 'n8n' },
-    { name: 'Supabase' },
-    { name: 'Razorpay' },
+    { name: 'Web Apps' },
+    { name: 'Mobile Apps' },
+    { name: 'APIs' },
+    { name: 'AI Integration' },
+    { name: 'Automation' },
+    { name: 'Real-time' },
   ] satisfies TechLogo[],
 }
 
 export const homeCTA = {
   headline: 'Let’s talk about what you’re building',
   subtext:
-    'Whether you need a full application, an automation system, or a clear technical roadmap — start with a no-pressure conversation. Based in India, working in IST.',
+    'Whether you need a web app, mobile app, AI automation system, or backend development — start with a no-pressure conversation. Based in Delhi, working in IST.',
   primaryLabel: 'Schedule a Consultation',
   primaryPath: '/contact',
   secondaryLabel: 'Explore Services',
