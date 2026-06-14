@@ -22,7 +22,7 @@ export function Navbar() {
           {/* <span className="font-heading text-xl font-semibold tracking-tight text-navy transition-colors group-hover:text-navy-light">
             {siteConfig.name}
           </span> */}
-          <img src={logo} className='w-14 rounded-lg' alt="" />
+          <img src={logo} className='w-28 rounded-lg' alt="" />
           {/* <span className="text-xs text-muted">{siteConfig.tagline}</span> */}
         </Link>
 
