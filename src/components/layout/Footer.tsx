@@ -1,5 +1,6 @@
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { footerLinks, siteConfig } from '@/content/site'
+import logo from '@/assets/logo.png'
 
 /** Site footer with navigation columns */
 export function Footer() {
@@ -9,9 +10,9 @@ export function Footer() {
         <div className="grid gap-10 md:grid-cols-4">
           {/* Brand column */}
           <div className="md:col-span-2">
-            <Link to="/" className="font-heading text-xl font-semibold text-navy">
-              {siteConfig.name}
-            </Link>
+            <NavLink to="/" className="text-xl font-semibold text-navy w-fit">
+              <img src={logo} className='w-28 rounded-lg -ml-4' alt="" />
+            </NavLink>
             <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted">
               {siteConfig.footerBlurb}
             </p>
