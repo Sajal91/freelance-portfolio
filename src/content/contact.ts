@@ -5,14 +5,14 @@ export const contactPage = {
   eyebrow: 'Contact',
   headline: 'Start with a conversation',
   subheadline:
-    'Share a bit about your project and I’ll get back to you within one working day. No hard sell - just an honest assessment of scope, timeline, and ballpark budget.',
+    "Share a bit about your project and I'll get back to you within one working day. No hard sell - just an honest assessment of scope, timeline, and ballpark budget.",
 }
 
 export const contactInfo = {
   email: siteConfig.email,
   phone: siteConfig.phone,
   responseTime: 'Within 1 working day (IST)',
-  availability: 'Mon – Sat, 10:00 AM – 7:00 PM IST',
+  availability: 'Mon - Sat, 11:00 AM - 8:00 PM IST',
   paymentNote: 'UPI, bank transfer, or Razorpay',
 }
 

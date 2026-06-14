@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from 'react'
+import { useState } from 'react'
 import { FadeIn } from '@/components/animation/FadeIn'
 import { Button } from '@/components/ui/Button'
 import { Card } from '@/components/ui/Card'
@@ -15,12 +15,61 @@ import bgImg from '@/assets/contact-bg.jpg'
 
 /** Contact page - form UI with static thank-you state (no backend) */
 export function Contact() {
-  const [submitted, setSubmitted] = useState(false)
+  const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault()
-    setSubmitted(true)
-  }
+  const openCalendarPopup = () => {
+    const width = 940;
+    const height = 800;
+
+    const left = window.screenX + (window.outerWidth - width) / 2;
+    const top = window.screenY + (window.outerHeight - height) / 2;
+
+    window.open(
+      "https://calendar.google.com/calendar/appointments/schedules/AcZssZ1f6RfbGtG4_hejOsRcIYpuYdbriUwK5F3JJMkzDZdTNy9rCEE7iIIzRqKfKyuWYQDSL1IEkBuW?gv=true",
+      "BookMeeting",
+      `
+        width=${width},
+        height=${height},
+        left=${left},
+        top=${top},
+        toolbar=no,
+        menubar=no,
+        location=no,
+        status=no,
+        scrollbars=yes,
+        resizable=yes
+      `
+    );
+  };
+
+  const handleSubmit = async (
+    event: React.FormEvent<HTMLFormElement>
+  ) => {
+    event.preventDefault();
+
+    const form = event.currentTarget;
+
+    const formData = new FormData(form);
+    setLoading(true)
+
+    try {
+      await fetch(
+        "https://script.google.com/macros/s/AKfycbxGF4SyYpT3-FTIBRbvtFfBtGFvseAJBC46Rr4UQn30rfnUIOF8OYUd8-e3v4h8wGq_/exec",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
+
+      setSubmitted(true)
+      form.reset();
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setLoading(false)
+    }
+  };
 
   if (submitted) {
     return (
@@ -132,8 +181,39 @@ export function Contact() {
                   />
                 </div>
 
-                <Button type="submit" size="lg" className="w-full sm:w-auto">
-                  {formFields.submitLabel}
+                <Button
+                  type="submit"
+                  size="lg"
+                  disabled={loading}
+                  className="w-full sm:w-auto cursor-pointer"
+                >
+                  {loading ? (
+                    <span className="flex items-center gap-2">
+                      <svg
+                        className="h-4 w-4 animate-spin"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <circle
+                          className="opacity-25"
+                          cx="12"
+                          cy="12"
+                          r="10"
+                          stroke="currentColor"
+                          strokeWidth="4"
+                        />
+                        <path
+                          className="opacity-75"
+                          fill="currentColor"
+                          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
+                        />
+                      </svg>
+                      Sending...
+                    </span>
+                  ) : (
+                    formFields.submitLabel
+                  )}
                 </Button>
               </form>
             </Card>
@@ -175,10 +255,6 @@ export function Contact() {
                     <dt className="text-muted">Availability</dt>
                     <dd className="text-charcoal">{contactInfo.availability}</dd>
                   </div>
-                  <div>
-                    <dt className="text-muted">Payments</dt>
-                    <dd className="text-charcoal">{contactInfo.paymentNote}</dd>
-                  </div>
                 </dl>
               </Card>
             </FadeIn>
@@ -189,10 +265,10 @@ export function Contact() {
                 <p className="mt-3 text-sm leading-relaxed text-muted">
                   {calendlyPlaceholder.subtext}
                 </p>
-                <Button variant="secondary" className="mt-6 w-full" disabled>
+                <Button variant="secondary" className="mt-6 w-full cursor-pointer" onClick={openCalendarPopup}>
                   {calendlyPlaceholder.buttonLabel}
                 </Button>
-                <p className="mt-3 text-center text-xs text-muted">{calendlyPlaceholder.note}</p>
+                {/* <p className="mt-3 text-center text-xs text-muted">{calendlyPlaceholder.note}</p> */}
               </Card>
             </FadeIn>
           </div>
