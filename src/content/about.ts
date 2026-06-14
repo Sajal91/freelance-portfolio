@@ -2,15 +2,15 @@ import type { ProcessStep } from '@/types/content'
 
 /** About page content */
 export const aboutPage = {
-  eyebrow: 'About',
+  eyebrow: 'About The Automation Hub',
   headline: 'Building scalable systems with clarity',
   subheadline:
-    'I’m a full-stack developer focused on efficient API design, responsive interfaces, and practical AI automation - from requirement analysis through deployment.',
+    'The Automation Hub is a full-stack development studio focused on efficient API design, responsive interfaces, and practical AI automation - from requirement analysis through deployment.',
 }
 
 export const founderStory = {
   name: 'Sajal Kapoor',
-  role: 'Full-Stack Developer & AI Automation Specialist',
+  role: 'Founder, The Automation Hub',
   intro:
     'I build and deploy scalable web applications with a focus on efficient API design and optimized database queries - helping teams ship reliable software without unnecessary complexity.',
   paragraphs: [
@@ -35,7 +35,7 @@ export const methodology: ProcessStep[] = [
     step: 2,
     title: 'Design',
     description:
-      'I propose a scoped solution with milestones, tech choices explained simply, and a realistic timeline - with transparent pricing in INR before any build begins.',
+      'We propose a scoped solution with milestones, tech choices explained simply, and a realistic timeline - with transparent pricing in INR before any build begins.',
   },
   {
     step: 3,
@@ -54,7 +54,7 @@ export const methodology: ProcessStep[] = [
 export const aboutCTA = {
   headline: 'Interested in working together?',
   subtext:
-    'Tell me about your project - I typically respond within one working day (IST).',
+    'Tell us about your project - The Automation Hub typically responds within one working day (IST).',
   primaryLabel: 'Get in Touch',
   primaryPath: '/contact',
 }

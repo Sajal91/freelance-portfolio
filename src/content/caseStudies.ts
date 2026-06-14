@@ -5,7 +5,7 @@ export const caseStudiesPage = {
   eyebrow: 'Case Studies',
   headline: 'Real projects from production work',
   subheadline:
-    'A selection of web applications, mobile apps, and automation systems built for real business and community needs.',
+    'A selection of web applications, mobile apps, and automation systems delivered by The Automation Hub for real business and community needs.',
 }
 
 export const caseStudies: CaseStudyDetail[] = [

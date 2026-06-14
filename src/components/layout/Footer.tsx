@@ -11,7 +11,7 @@ export function Footer() {
           {/* Brand column */}
           <div className="md:col-span-2">
             <NavLink to="/" className="text-xl font-semibold text-navy w-fit">
-              <img src={logo} className='w-28 rounded-lg -ml-4' alt="" />
+              <img src={logo} className='w-28 rounded-lg -ml-4' alt={siteConfig.name} />
             </NavLink>
             <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted">
               {siteConfig.footerBlurb}

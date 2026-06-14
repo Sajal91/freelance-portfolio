@@ -46,7 +46,7 @@ export function Home() {
       {/* Service highlights */}
       <SectionContainer variant="alt" size="xl">
         <div className="text-center">
-          <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">What I help with</h2>
+          <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">What we help with</h2>
           <p className="mx-auto mt-4 max-w-2xl text-muted">
             Core offerings - each scoped clearly, delivered with a process you can follow.
           </p>

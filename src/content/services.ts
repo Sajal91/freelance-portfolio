@@ -3,9 +3,9 @@ import type { ServiceDetail } from '@/types/content'
 /** Services page content */
 export const servicesPage = {
   eyebrow: 'Services',
-  headline: 'What I build and automate',
+  headline: 'What we build and automate',
   subheadline:
-    'Core offerings based on my production experience - web and app development, API design, and AI workflow automation scoped transparently from discovery to deployment.',
+    'Core offerings from The Automation Hub - web and app development, API design, and AI workflow automation scoped transparently from discovery to deployment.',
 }
 
 export const services: ServiceDetail[] = [
@@ -115,7 +115,7 @@ export const otherServices = services.filter((service) => !service.featured)
 export const servicesCTA = {
   headline: 'Not sure which service fits?',
   subtext:
-    'Most projects blend a few of these. Book a free consultation and we’ll map the right approach and ballpark budget together.',
+    'Most projects blend a few of these. Book a free consultation with The Automation Hub and we’ll map the right approach and ballpark budget together.',
   primaryLabel: 'Book a Free Consultation',
   primaryPath: '/contact',
 }

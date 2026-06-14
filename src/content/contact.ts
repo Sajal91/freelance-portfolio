@@ -5,7 +5,7 @@ export const contactPage = {
   eyebrow: 'Contact',
   headline: 'Start with a conversation',
   subheadline:
-    "Share a bit about your project and I'll get back to you within one working day. No hard sell - just an honest assessment of scope, timeline, and ballpark budget.",
+    "Share a bit about your project with The Automation Hub and we'll get back to you within one working day. No hard sell - just an honest assessment of scope, timeline, and ballpark budget.",
 }
 
 export const contactInfo = {
@@ -50,7 +50,7 @@ export const formFields = {
 export const thankYouMessage = {
   headline: 'Thank you - message received',
   subtext:
-    'I’ll review your note and respond within one working day. In the meantime, feel free to browse case studies for examples of my recent work.',
+    'I’ll review your note and respond within one working day on behalf of The Automation Hub. In the meantime, feel free to browse case studies for examples of our recent work.',
   ctaLabel: 'View Case Studies',
   ctaPath: '/case-studies',
 }

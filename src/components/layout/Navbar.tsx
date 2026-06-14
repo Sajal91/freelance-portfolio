@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
-import { navLinks } from '@/content/site'
+import { navLinks, siteConfig } from '@/content/site'
 import { Button } from '@/components/ui/Button'
 import logo from '@/assets/logo.png'
 
@@ -22,7 +22,7 @@ export function Navbar() {
           {/* <span className="font-heading text-xl font-semibold tracking-tight text-navy transition-colors group-hover:text-navy-light">
             {siteConfig.name}
           </span> */}
-          <img src={logo} className='w-28 rounded-lg' alt="" />
+          <img src={logo} className='w-28 rounded-lg' alt={siteConfig.name} />
           {/* <span className="text-xs text-muted">{siteConfig.tagline}</span> */}
         </Link>
 

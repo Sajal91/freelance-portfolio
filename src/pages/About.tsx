@@ -54,7 +54,7 @@ export function About() {
 
       <SectionContainer>
         <div className="text-center">
-          <h2 className="text-3xl font-semibold tracking-tight">How I work</h2>
+          <h2 className="text-3xl font-semibold tracking-tight">How we work</h2>
           <p className="mx-auto mt-4 max-w-2xl text-muted">
             A consistent process across every project - so you always know what&apos;s happening
             and what comes next.
