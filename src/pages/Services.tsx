@@ -57,7 +57,7 @@ export function Services() {
         subheadline={servicesPage.subheadline}
       />
 
-      <SectionContainer variant="alt" className="">
+      <SectionContainer variant="alt" className="" noAnimation>
         <div className="space-y-8">
           {featuredServices.map((service, index) => (
             <FadeIn key={service.id} delay={index * 0.08}>
