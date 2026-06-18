@@ -70,6 +70,28 @@ export const services: ServiceDetail[] = [
     featured: true,
   },
   {
+    id: 'ecom-cms',
+    title: 'E-Commerce & CMS Solutions',
+    description:
+      'Build, scale, and grow your online presence with custom websites and e-commerce stores tailored to your business needs. We create fast, responsive, and user-friendly digital experiences designed to drive results.',
+    idealFor:
+      'Businesses looking to launch, migrate, or optimize their online store or website with a user-friendly platform that supports growth, sales, and easy content management.',
+    pricing: {
+      model: 'Fixed project fee',
+      from: '₹25,000',
+      // note: 'Scope depends on endpoints and integrations.',
+    },
+    features: [
+      'Shopify Store Development & Customization',
+      'WordPress & WooCommerce Websites',
+      'Wix Website Design & Development',
+      'Custom CMS Development',
+      'CMS Migration & Platform Setup',
+      'Custom Features & Third-Party Integrations',
+    ],
+    featured: true,
+  },
+  {
     id: 'app-development',
     title: 'App Development',
     description:
@@ -106,7 +128,7 @@ export const services: ServiceDetail[] = [
       'Authentication, middleware, and error handling',
       'Third-party API integrations and webhook handling',
     ],
-  },
+  }
 ]
 
 export const featuredServices = services.filter((service) => service.featured)
