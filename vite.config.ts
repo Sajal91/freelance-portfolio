@@ -5,27 +5,42 @@ import path from 'path'
 import sitemap from 'vite-plugin-sitemap'
 
 // https://vite.dev/config/
-export default defineConfig({
-  plugins: [
-    react(),
-    tailwindcss(),
-    sitemap({
-      hostname: 'https://www.theautomationhub.in',
-      dynamicRoutes: [
-        '/',
-        '/about',
-        '/services',
-        '/case-studies',
-        '/case-studies/social-media-automation-agent',
-        '/case-studies/ai-design-automation-platform',
-        '/case-studies/pushup-crew-app',
-        '/contact',
+export default defineConfig(({ isSsrBuild }) => ({
+  plugins: isSsrBuild
+    ? [react(), tailwindcss()]
+    : [
+        react(),
+        tailwindcss(),
+        sitemap({
+          hostname: 'https://www.theautomationhub.in',
+          dynamicRoutes: [
+            '/',
+            '/about',
+            '/services',
+            '/case-studies',
+            '/case-studies/social-media-automation-agent',
+            '/case-studies/ai-design-automation-platform',
+            '/case-studies/pushup-crew-app',
+            '/contact',
+          ],
+        }),
       ],
-    })
-  ],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
   },
-})
+  build: isSsrBuild
+    ? {
+        outDir: 'dist/server',
+        rollupOptions: {
+          input: 'src/entry-server.tsx',
+        },
+      }
+    : {
+        outDir: 'dist/client',
+      },
+  ssr: {
+    noExternal: ['react-router-dom'],
+  },
+}))

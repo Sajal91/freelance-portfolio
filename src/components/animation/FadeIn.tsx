@@ -7,11 +7,13 @@ interface FadeInProps {
   className?: string
 }
 
+const isServer = typeof window === 'undefined'
+
 /** Subtle fade-in + slide-up on scroll */
 export function FadeIn({ children, delay = 0, className = '' }: FadeInProps) {
   const prefersReducedMotion = useReducedMotion()
 
-  if (prefersReducedMotion) {
+  if (isServer || prefersReducedMotion) {
     return <div className={className}>{children}</div>
   }
 
