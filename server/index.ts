@@ -1,7 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import { fileURLToPath } from 'node:url'
-import express from 'express'
+import { fileURLToPath, pathToFileURL } from 'node:url'
+import express, { type NextFunction, type Request, type Response } from 'express'
 import compression from 'compression'
 import type { ViteDevServer } from 'vite'
 
@@ -15,6 +15,14 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const isProduction = process.env.NODE_ENV === 'production'
 const port = Number(process.env.PORT) || 5173
 const host = process.env.HOST || '0.0.0.0'
+
+async function loadProdRenderer(): Promise<(url: string) => RenderResult> {
+  const serverEntry = path.join(__dirname, '../dist/server/entry-server.js')
+  const module = (await import(pathToFileURL(serverEntry).href)) as {
+    render: (url: string) => RenderResult
+  }
+  return module.render
+}
 
 async function createServer() {
   const app = express()
@@ -34,7 +42,7 @@ async function createServer() {
     app.use(express.static(clientDist, { index: false }))
   }
 
-  app.use(async (req, res, next) => {
+  app.use(async (req: Request, res: Response, next: NextFunction) => {
     if (req.method !== 'GET' && req.method !== 'HEAD') {
       next()
       return
@@ -56,10 +64,7 @@ async function createServer() {
           path.resolve(__dirname, '../dist/client/index.html'),
           'utf-8',
         )
-        const serverModule = (await import('../dist/server/entry-server.js')) as {
-          render: (url: string) => RenderResult
-        }
-        render = serverModule.render
+        render = await loadProdRenderer()
       }
 
       const { html, head, status } = render(url)

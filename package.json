@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "tsx server/index.ts",
-    "build": "tsc -b && npm run build:client && npm run build:server",
+    "build": "tsc -p tsconfig.app.json && tsc -p tsconfig.node.json && npm run build:client && npm run build:server",
     "build:client": "vite build",
     "build:server": "vite build --ssr src/entry-server.tsx",
     "lint": "eslint .",
