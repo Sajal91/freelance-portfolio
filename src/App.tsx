@@ -6,6 +6,7 @@ import { CaseStudies } from '@/pages/CaseStudies'
 import { CaseStudyDetail } from '@/pages/CaseStudyDetail'
 import { About } from '@/pages/About'
 import { Contact } from '@/pages/Contact'
+import { NotFound } from '@/pages/NotFound'
 
 /** Shared route tree used by both client hydration and SSR */
 export function AppRoutes() {
@@ -18,6 +19,7 @@ export function AppRoutes() {
         <Route path="case-studies/:slug" element={<CaseStudyDetail />} />
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   )

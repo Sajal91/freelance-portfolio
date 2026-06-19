@@ -1,12 +1,12 @@
 import { Link, useParams } from 'react-router-dom'
 import { FadeIn } from '@/components/animation/FadeIn'
-import { Button } from '@/components/ui/Button'
 import { Card } from '@/components/ui/Card'
 import { SectionContainer } from '@/components/ui/SectionContainer'
 import { CTASection } from '@/components/ui/CTASection'
 import { CaseStudyBadges } from '@/components/case-studies/CaseStudyBadges'
 import { getCaseStudyBySlug } from '@/content/caseStudies'
 import { defaultCTA } from '@/content/site'
+import { NotFound } from '@/pages/NotFound'
 
 /** Individual case study - Problem → Process → Solution → Result */
 export function CaseStudyDetail() {
@@ -14,17 +14,7 @@ export function CaseStudyDetail() {
   const study = slug ? getCaseStudyBySlug(slug) : undefined
 
   if (!study) {
-    return (
-      <SectionContainer>
-        <div className="text-center">
-          <h1 className="text-3xl font-semibold">Case study not found</h1>
-          <p className="mt-4 text-muted">The project you&apos;re looking for doesn&apos;t exist.</p>
-          <div className="mt-8">
-            <Button to="/case-studies">Back to Case Studies</Button>
-          </div>
-        </div>
-      </SectionContainer>
-    )
+    return <NotFound variant="case-study" />
   }
 
   return (

@@ -14,6 +14,18 @@ export interface PageMeta {
 const defaultDescription =
   'The Automation Hub - full-stack development and AI automation for Indian startups and MSMEs. Custom web apps, dashboards, and workflow systems - based in India, priced in INR.'
 
+const notFoundDescription =
+  'The page you requested could not be found on The Automation Hub. Browse our services, case studies, or contact us for help.'
+
+function buildNotFoundMeta(canonical: string): PageMeta {
+  return {
+    title: `Page Not Found | ${siteConfig.name}`,
+    description: notFoundDescription,
+    canonical,
+    status: 404,
+  }
+}
+
 function normalizePathname(url: string): string {
   const pathname = new URL(url, siteConfig.url).pathname
   if (pathname.length > 1 && pathname.endsWith('/')) {
@@ -75,20 +87,10 @@ export function getPageMeta(url: string): PageMeta {
             status: 200,
           }
         }
-        return {
-          title: `Page Not Found | ${siteConfig.name}`,
-          description: defaultDescription,
-          canonical,
-          status: 404,
-        }
+        return buildNotFoundMeta(canonical)
       }
 
-      return {
-        title: `Page Not Found | ${siteConfig.name}`,
-        description: defaultDescription,
-        canonical,
-        status: 404,
-      }
+      return buildNotFoundMeta(canonical)
     }
   }
 }
@@ -103,7 +105,7 @@ function escapeHtml(value: string): string {
 
 /** HTML fragment for SSR head injection */
 export function renderHeadMeta(meta: PageMeta): string {
-  return [
+  const tags = [
     `<title>${escapeHtml(meta.title)}</title>`,
     `<meta name="description" content="${escapeHtml(meta.description)}" />`,
     `<link rel="canonical" href="${escapeHtml(meta.canonical)}" />`,
@@ -112,7 +114,13 @@ export function renderHeadMeta(meta: PageMeta): string {
     `<meta property="og:description" content="${escapeHtml(meta.description)}" />`,
     `<meta property="og:url" content="${escapeHtml(meta.canonical)}" />`,
     `<meta property="og:type" content="website" />`,
-  ].join('\n    ')
+  ]
+
+  if (meta.status === 404) {
+    tags.push('<meta name="robots" content="noindex, nofollow" />')
+  }
+
+  return tags.join('\n    ')
 }
 
 function upsertMeta(attr: 'name' | 'property', key: string, content: string) {
@@ -149,6 +157,12 @@ export function applyPageMeta(meta: PageMeta) {
   upsertMeta('property', 'og:description', meta.description)
   upsertMeta('property', 'og:url', meta.canonical)
   upsertMeta('property', 'og:type', 'website')
+
+  if (meta.status === 404) {
+    upsertMeta('name', 'robots', 'noindex, nofollow')
+  } else {
+    document.head.querySelector('meta[name="robots"]')?.remove()
+  }
 }
 
 /** Known static routes for prerender hints / sitemap alignment */
