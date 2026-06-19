@@ -2,6 +2,7 @@ import { Outlet, useLocation } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
+import { PageMeta } from '@/components/layout/PageMeta'
 import { PageTransition } from '@/components/animation/PageTransition'
 import { ScrollToTop } from '@/components/animation/ScrollToTop'
 
@@ -11,6 +12,7 @@ export function Layout() {
 
   return (
     <div className="flex min-h-screen flex-col">
+      <PageMeta />
       <ScrollToTop />
       <Navbar />
       <main className="flex-1">

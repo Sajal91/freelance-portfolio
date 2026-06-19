@@ -115,6 +115,42 @@ export function renderHeadMeta(meta: PageMeta): string {
   ].join('\n    ')
 }
 
+function upsertMeta(attr: 'name' | 'property', key: string, content: string) {
+  let element = document.head.querySelector(`meta[${attr}="${key}"]`)
+
+  if (!element) {
+    element = document.createElement('meta')
+    element.setAttribute(attr, key)
+    document.head.appendChild(element)
+  }
+
+  element.setAttribute('content', content)
+}
+
+function upsertCanonical(href: string) {
+  let element = document.head.querySelector('link[rel="canonical"]')
+
+  if (!element) {
+    element = document.createElement('link')
+    element.setAttribute('rel', 'canonical')
+    document.head.appendChild(element)
+  }
+
+  element.setAttribute('href', href)
+}
+
+/** Sync document head after client-side route changes */
+export function applyPageMeta(meta: PageMeta) {
+  document.title = meta.title
+  upsertMeta('name', 'description', meta.description)
+  upsertCanonical(meta.canonical)
+  upsertMeta('property', 'og:site_name', siteConfig.name)
+  upsertMeta('property', 'og:title', meta.title)
+  upsertMeta('property', 'og:description', meta.description)
+  upsertMeta('property', 'og:url', meta.canonical)
+  upsertMeta('property', 'og:type', 'website')
+}
+
 /** Known static routes for prerender hints / sitemap alignment */
 export const staticRoutes = [
   '/',

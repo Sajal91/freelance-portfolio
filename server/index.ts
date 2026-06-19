@@ -24,6 +24,16 @@ async function loadProdRenderer(): Promise<(url: string) => RenderResult> {
   return module.render
 }
 
+function injectDocument(template: string, head: string, html: string): string {
+  const withHead = template.includes('<!--ssr-head-->')
+    ? template.replace('<!--ssr-head-->', head)
+    : template.replace('</head>', `  ${head}\n</head>`)
+
+  return withHead.includes('<!--ssr-outlet-->')
+    ? withHead.replace('<!--ssr-outlet-->', html)
+    : withHead.replace('<div id="root"></div>', `<div id="root">${html}</div>`)
+}
+
 async function createServer() {
   const app = express()
   app.use(compression())
@@ -68,9 +78,7 @@ async function createServer() {
       }
 
       const { html, head, status } = render(url)
-      const document = template
-        .replace('<!--ssr-head-->', head)
-        .replace('<!--ssr-outlet-->', html)
+      const document = injectDocument(template, head, html)
 
       res.status(status).type('html').send(document)
     } catch (error) {
