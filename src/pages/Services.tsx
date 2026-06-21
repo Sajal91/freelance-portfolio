@@ -6,10 +6,11 @@ import { CTASection } from '@/components/ui/CTASection'
 import type { ServiceDetail } from '@/types/content'
 import { featuredServices, otherServices, servicesCTA, servicesPage } from '@/content/services'
 import serviceBg from '@/assets/services-bg.webp'
+import { CheckCircleIcon } from "@phosphor-icons/react";
 
 function ServiceDetailContent({ service }: { service: ServiceDetail }) {
   return (
-    <div className="grid gap-8 lg:grid-cols-[1fr_280px]">
+    <div className="gap-8">
       <div>
         <h2 className="text-2xl font-semibold md:text-3xl">{service.title}</h2>
         <p className="mt-4 leading-relaxed text-muted">{service.description}</p>
@@ -23,7 +24,7 @@ function ServiceDetailContent({ service }: { service: ServiceDetail }) {
           {service.features.map((feature) => (
             <li key={feature} className="flex items-start gap-2 text-sm text-charcoal">
               <span className="mt-1 text-warm" aria-hidden="true">
-                ✓
+                <CheckCircleIcon fill="#c4855a" weight="fill" />
               </span>
               {feature}
             </li>
@@ -31,7 +32,7 @@ function ServiceDetailContent({ service }: { service: ServiceDetail }) {
         </ul>
       </div>
 
-      <div className="rounded-xl border border-border bg-cream p-6 lg:h-fit">
+      {/* <div className="rounded-xl border border-border bg-cream p-6 lg:h-fit">
         <p className="text-xs font-semibold uppercase tracking-wider text-muted">
           {service.pricing.model}
         </p>
@@ -41,7 +42,7 @@ function ServiceDetailContent({ service }: { service: ServiceDetail }) {
         {service.pricing.note && (
           <p className="mt-2 text-xs leading-relaxed text-muted">{service.pricing.note}</p>
         )}
-      </div>
+      </div> */}
     </div>
   )
 }
