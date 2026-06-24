@@ -34,6 +34,7 @@ export const footerLinks = {
     { label: 'About', path: '/about' },
     { label: 'Case Studies', path: '/case-studies' },
     { label: 'Contact', path: '/contact' },
+    { label: 'Privacy Policy', path: '/privacy-policy' },
   ],
 }
 

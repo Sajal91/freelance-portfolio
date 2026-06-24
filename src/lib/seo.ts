@@ -1,6 +1,7 @@
 import { aboutPage } from '@/content/about'
 import { caseStudies, caseStudiesPage, getCaseStudyBySlug } from '@/content/caseStudies'
 import { contactPage } from '@/content/contact'
+import { privacyPolicyPage } from '@/content/privacyPolicy'
 import { servicesPage } from '@/content/services'
 import { siteConfig } from '@/content/site'
 
@@ -72,6 +73,13 @@ export function getPageMeta(url: string): PageMeta {
       return {
         title: `${contactPage.headline} | ${siteConfig.name}`,
         description: contactPage.subheadline,
+        canonical,
+        status: 200,
+      }
+    case '/privacy-policy':
+      return {
+        title: `${privacyPolicyPage.headline} | ${siteConfig.name}`,
+        description: privacyPolicyPage.subheadline,
         canonical,
         status: 200,
       }
@@ -172,5 +180,6 @@ export const staticRoutes = [
   '/services',
   '/case-studies',
   '/contact',
+  '/privacy-policy',
   ...caseStudies.map((study) => `/case-studies/${study.slug}`),
 ]

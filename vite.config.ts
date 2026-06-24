@@ -22,6 +22,7 @@ export default defineConfig(({ isSsrBuild }) => ({
             '/case-studies/ai-design-automation-platform',
             '/case-studies/pushup-crew-app',
             '/contact',
+            '/privacy-policy',
           ],
         }),
       ],
