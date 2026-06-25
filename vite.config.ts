@@ -13,8 +13,9 @@ export default defineConfig(({ isSsrBuild }) => ({
         tailwindcss(),
         sitemap({
           hostname: 'https://www.theautomationhub.in',
+          outDir: 'dist/client',
+          generateRobotsTxt: false,
           dynamicRoutes: [
-            '/',
             '/about',
             '/services',
             '/case-studies',
