@@ -10,7 +10,7 @@ import { CaseStudyBadges } from '@/components/case-studies/CaseStudyBadges'
 
 /** Gradient fills for service icon tiles - warm, on-brand accent stops */
 const serviceTileGradients = [
-  'bg-[linear-gradient(135deg,#e79a8f_0%,#c4855a_100%)]',
+  'bg-[linear-gradient(135deg,#e79a8f_0%,#c4855a_100%)] ',
   'bg-[linear-gradient(135deg,#7fa8c9_0%,#4f7ba3_100%)]',
   'bg-[linear-gradient(135deg,#e6b566_0%,#c4855a_100%)]',
   'bg-[linear-gradient(135deg,#9a8fc4_0%,#6f639e_100%)]',
