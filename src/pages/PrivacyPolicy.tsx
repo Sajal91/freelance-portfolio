@@ -8,7 +8,7 @@ import { privacyPolicyPage, privacyPolicySections } from '@/content/privacyPolic
 export function PrivacyPolicy() {
   return (
     <>
-      <SectionContainer variant="default" size="md" className="pb-8! md:pb-10!">
+      <SectionContainer variant="default" size="md" className="bg-hero-wash pt-28! pb-8! md:pt-32! md:pb-10!">
         <FadeIn>
           <div className="text-center">
             <p className="text-sm font-medium uppercase tracking-widest text-warm">

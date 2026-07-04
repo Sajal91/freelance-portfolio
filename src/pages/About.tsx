@@ -21,12 +21,18 @@ export function About() {
       <SectionContainer variant="alt" className="">
         <div className="grid gap-12 lg:grid-cols-[280px_1fr]">
           <FadeIn>
-            <div className="flex aspect-square items-center justify-center overflow-hidden rounded-2xl border border-border bg-cream">
-              <img
-                src={profilePhoto}
-                alt={founderStory.name}
-                className="h-full w-full object-cover"
+            <div className="relative">
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute -inset-3 rounded-3xl bg-[linear-gradient(135deg,rgba(231,154,143,0.35),rgba(154,143,196,0.25))] blur-xl"
               />
+              <div className="relative flex aspect-square items-center justify-center overflow-hidden rounded-2xl border border-white/60 bg-cream p-1.5 shadow-float">
+                <img
+                  src={profilePhoto}
+                  alt={founderStory.name}
+                  className="h-full w-full rounded-xl object-cover"
+                />
+              </div>
             </div>
           </FadeIn>
           <FadeIn delay={0.1}>
@@ -64,7 +70,7 @@ export function About() {
           {methodology.map((step, index) => (
             <FadeIn key={step.step} delay={index * 0.1}>
               <Card className="h-full">
-                <span className="font-heading text-4xl font-semibold text-warm/40">
+                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-[linear-gradient(135deg,#e79a8f_0%,#c4855a_100%)] font-heading text-lg font-semibold text-white shadow-[0_1px_0_rgba(255,255,255,0.4)_inset,0_8px_18px_-6px_rgba(30,42,59,0.35)]">
                   {String(step.step).padStart(2, '0')}
                 </span>
                 <h3 className="mt-4 text-lg font-semibold">{step.title}</h3>

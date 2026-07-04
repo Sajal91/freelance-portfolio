@@ -14,6 +14,20 @@
   --color-warm-light: #e8c4a8;
   --color-border: #e5e1d9;
   --color-surface: #ffffff;
+
+  /* Accent stops used for gradient icon tiles / washes */
+  --color-peach: #f2a97e;
+  --color-rose: #e79a8f;
+  --color-amber: #e6b566;
+  --color-sky: #7fa8c9;
+  --color-sage: #8fae94;
+  --color-violet: #9a8fc4;
+
+  /* Layered, realistic shadows */
+  --shadow-soft: 0 1px 2px rgba(30, 42, 59, 0.04), 0 6px 16px -8px rgba(30, 42, 59, 0.1);
+  --shadow-card: 0 1px 2px rgba(30, 42, 59, 0.05), 0 10px 30px -12px rgba(30, 42, 59, 0.16);
+  --shadow-lift: 0 2px 4px rgba(30, 42, 59, 0.06), 0 24px 48px -18px rgba(30, 42, 59, 0.24);
+  --shadow-float: 0 8px 20px -6px rgba(30, 42, 59, 0.18), 0 30px 60px -24px rgba(30, 42, 59, 0.28);
 }
 
 @layer base {
@@ -31,4 +45,50 @@
   h4 {
     @apply font-heading text-navy;
   }
+}
+
+@layer components {
+  /* Warm ambient gradient wash behind hero / feature sections */
+  .bg-hero-wash {
+    background-image:
+      radial-gradient(60% 55% at 18% 12%, rgba(232, 196, 168, 0.55) 0%, rgba(232, 196, 168, 0) 60%),
+      radial-gradient(55% 50% at 85% 8%, rgba(196, 133, 90, 0.28) 0%, rgba(196, 133, 90, 0) 62%),
+      radial-gradient(70% 60% at 65% 100%, rgba(154, 143, 196, 0.22) 0%, rgba(154, 143, 196, 0) 68%),
+      linear-gradient(180deg, #fdfbf7 0%, #faf8f4 100%);
+  }
+
+  /* Deep gradient for navy CTA / dark sections */
+  .bg-navy-gradient {
+    background-image:
+      radial-gradient(50% 60% at 15% 0%, rgba(196, 133, 90, 0.35) 0%, rgba(196, 133, 90, 0) 55%),
+      radial-gradient(45% 55% at 90% 100%, rgba(154, 143, 196, 0.3) 0%, rgba(154, 143, 196, 0) 60%),
+      linear-gradient(160deg, #24334a 0%, #1e2a3b 55%, #172130 100%);
+  }
+
+  /* Gradient text used to highlight a keyword in headings */
+  .text-gradient-warm {
+    background-image: linear-gradient(100deg, #c4855a 0%, #e79a8f 45%, #d98a6a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Frosted announcement pill */
+  .pill-announce {
+    @apply inline-flex items-center gap-2 rounded-full border border-border/70 bg-surface/70 py-1.5 pl-1.5 pr-4 text-sm text-charcoal backdrop-blur-md;
+    box-shadow: var(--shadow-soft);
+  }
+}
+
+@utility shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+@utility shadow-card {
+  box-shadow: var(--shadow-card);
+}
+@utility shadow-lift {
+  box-shadow: var(--shadow-lift);
+}
+@utility shadow-float {
+  box-shadow: var(--shadow-float);
 }

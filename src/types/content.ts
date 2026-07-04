@@ -61,3 +61,34 @@ export interface ProcessStep {
 export interface TechLogo {
   name: string
 }
+
+export interface BlogSign {
+  title: string
+  body: string
+}
+
+export type BlogBlock =
+  | { type: 'paragraph'; text: string }
+  | { type: 'heading'; text: string }
+  | { type: 'list'; items: string[] }
+  | { type: 'callout'; title?: string; text: string }
+  | { type: 'signs'; items: BlogSign[] }
+
+export interface BlogPostPreview {
+  slug: string
+  title: string
+  excerpt: string
+  category: string
+  tags: string[]
+  /** Pre-formatted, SSR-safe date string, e.g. "July 2, 2026" */
+  date: string
+  readingTime: string
+  author: { name: string; role: string }
+  featured?: boolean
+}
+
+export interface BlogPost extends BlogPostPreview {
+  /** Short standfirst shown under the title on the article page */
+  standfirst: string
+  body: BlogBlock[]
+}

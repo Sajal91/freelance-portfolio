@@ -30,15 +30,22 @@ export function NotFound({ variant = 'default' }: NotFoundProps) {
 
   return (
     <>
-      <section className="relative flex min-h-[320px] items-center overflow-hidden md:min-h-[380px]">
+      <section className="relative flex min-h-[380px] items-center overflow-hidden pt-24 md:min-h-[440px] md:pt-28">
         <img
           src={aboutBg}
           alt=""
           className="absolute inset-0 h-full w-full object-cover"
           aria-hidden="true"
         />
-        <div className="absolute inset-0 bg-navy/92" aria-hidden="true" />
-        <div className="relative z-10 mx-auto w-full max-w-3xl px-5 py-16 text-center md:px-8 md:py-20">
+        <div
+          className="absolute inset-0 bg-[linear-gradient(120deg,rgba(23,33,48,0.95)_0%,rgba(30,42,59,0.9)_45%,rgba(45,63,86,0.85)_100%)]"
+          aria-hidden="true"
+        />
+        <div
+          className="pointer-events-none absolute -right-20 -top-24 h-72 w-72 rounded-full bg-warm/25 blur-3xl"
+          aria-hidden="true"
+        />
+        <div className="relative z-10 mx-auto w-full max-w-3xl px-5 py-12 text-center md:px-8 md:py-16">
           <p className="text-6xl font-semibold tracking-tight text-warm-light md:text-7xl">
             {content.code}
           </p>
@@ -74,7 +81,7 @@ export function NotFound({ variant = 'default' }: NotFoundProps) {
               <Link
                 key={link.path}
                 to={link.path}
-                className="rounded-lg border border-border bg-surface px-5 py-2.5 text-sm font-medium text-navy transition-colors hover:border-navy/30 hover:bg-cream"
+                className="rounded-full border border-border/80 bg-[linear-gradient(180deg,#ffffff_0%,#f7f3ec_100%)] px-5 py-2.5 text-sm font-medium text-navy shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:border-warm/40 hover:shadow-card"
               >
                 {link.label}
               </Link>

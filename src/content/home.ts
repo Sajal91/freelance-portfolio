@@ -3,11 +3,18 @@ import type { ServiceHighlight, TechLogo } from '@/types/content'
 /** Home page content - edit here without touching components */
 export const homeHero = {
   eyebrow: 'The Automation Hub · Full-Stack & AI Automation',
-  headline: 'Scalable apps and AI workflows that ship to production',
+  announce: { badge: 'New', text: 'Now booking Q3 build & automation projects' },
+  headline: 'Scalable apps and AI workflows that',
+  headlineAccent: 'ship to production',
   subheadline:
     'At The Automation Hub, we build and deploy web and mobile applications with efficient APIs, responsive interfaces, and practical AI automation - from requirement analysis through deployment.',
   ctaPrimary: { label: 'Book a Free Consultation', path: '/contact' },
   ctaSecondary: { label: 'View Case Studies', path: '/case-studies' },
+  stats: [
+    { value: '30+', label: 'Products shipped' },
+    { value: '4.9/5', label: 'Client rating' },
+    { value: '<24h', label: 'Response time' },
+  ],
 }
 
 export const serviceHighlights: ServiceHighlight[] = [

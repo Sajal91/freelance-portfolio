@@ -20,7 +20,7 @@ export function CaseStudyDetail() {
   return (
     <>
       {/* Header */}
-      <SectionContainer noAnimation className="pb-8!">
+      <SectionContainer noAnimation className="pt-28! pb-8! md:pt-32!">
         <Link
           to="/case-studies"
           className="inline-flex items-center text-sm text-muted transition-colors hover:text-navy"
@@ -43,8 +43,8 @@ export function CaseStudyDetail() {
         <div className="grid gap-6 sm:grid-cols-3">
           {study.metrics.map((metric, index) => (
             <FadeIn key={metric.label} delay={index * 0.1}>
-              <div className="text-center">
-                <p className="font-heading text-3xl font-semibold text-navy md:text-4xl">
+              <div className="rounded-2xl border border-border/70 bg-[linear-gradient(180deg,#ffffff_0%,#fdfbf7_100%)] p-6 text-center shadow-soft">
+                <p className="font-heading text-3xl font-semibold text-gradient-warm md:text-4xl">
                   {metric.value}
                 </p>
                 <p className="mt-2 text-sm text-muted">{metric.label}</p>
@@ -72,7 +72,7 @@ export function CaseStudyDetail() {
             {study.process.map((step, index) => (
               <FadeIn key={step} delay={index * 0.08}>
                 <li className="flex gap-4">
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-navy text-sm font-medium text-cream">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[linear-gradient(135deg,#2d3f56_0%,#1e2a3b_100%)] text-sm font-medium text-cream shadow-[0_1px_0_rgba(255,255,255,0.15)_inset,0_6px_14px_-6px_rgba(30,42,59,0.5)]">
                     {index + 1}
                   </span>
                   <p className="pt-1 leading-relaxed text-charcoal">{step}</p>
