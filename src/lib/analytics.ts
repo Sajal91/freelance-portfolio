@@ -1,4 +1,4 @@
-export const GA_MEASUREMENT_ID = 'G-RBR264N5K4'
+export const GA_MEASUREMENT_ID = 'G-D08PWLVPS5'
 
 let scriptRequested = false
 

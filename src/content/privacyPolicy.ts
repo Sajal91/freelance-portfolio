@@ -58,7 +58,7 @@ export const privacyPolicySections: PrivacyPolicySection[] = [
       'We use trusted third-party providers to operate parts of the Site. These services may process data according to their own privacy policies:',
     ],
     bullets: [
-      'Google Analytics — website usage statistics (Measurement ID: G-RBR264N5K4).',
+      'Google Analytics — website usage statistics (Measurement ID: G-D08PWLVPS5).',
       'Google Apps Script — stores contact form submissions submitted through the Site.',
       'Google Calendar — appointment scheduling when you book a consultation.',
       'Hosting and infrastructure providers that deliver the Site to your browser.',
