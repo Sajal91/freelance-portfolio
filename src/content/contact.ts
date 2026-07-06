@@ -27,6 +27,7 @@ export const calendlyPlaceholder = {
 export const formFields = {
   name: { label: 'Name', placeholder: 'Your full name' },
   email: { label: 'Email', placeholder: 'you@company.in' },
+  phone: { label: 'Phone number', placeholder: '+91 98765 43210' },
   company: { label: 'Company', placeholder: 'Company name (optional)' },
   projectType: {
     label: 'Project type',

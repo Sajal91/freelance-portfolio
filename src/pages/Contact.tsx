@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import { FadeIn } from '@/components/animation/FadeIn'
 import { Button } from '@/components/ui/Button'
 import { Card } from '@/components/ui/Card'
@@ -14,9 +15,24 @@ import {
 import bgImg from '@/assets/contact-bg.jpg'
 
 /** Contact page - form UI with static thank-you state (no backend) */
+/** Maps known query-param slugs to the display label locked into the form */
+const projectTypeSlugMap: Record<string, string> = {
+  whatsappautomationagent: 'WhatsApp Automation Agent',
+}
+
 export function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [searchParams] = useSearchParams();
+
+  const rawProjectType = searchParams.get('projectType');
+  const normalizedProjectType = rawProjectType
+    ? rawProjectType.toLowerCase().replace(/[^a-z0-9]/g, '')
+    : '';
+  const lockedProjectType = rawProjectType
+    ? projectTypeSlugMap[normalizedProjectType] ?? rawProjectType
+    : null;
+  const isProjectTypeLocked = Boolean(lockedProjectType);
 
   const openCalendarPopup = () => {
     const width = 940;
@@ -55,7 +71,7 @@ export function Contact() {
 
     try {
       await fetch(
-        "https://script.google.com/macros/s/AKfycbxGF4SyYpT3-FTIBRbvtFfBtGFvseAJBC46Rr4UQn30rfnUIOF8OYUd8-e3v4h8wGq_/exec",
+        "https://script.google.com/macros/s/AKfycbwe_oOtb2dBq9uqeguav_uoITLqypLQStpj5I2V9yy-MqXMF60dYe3w6dcbu2r1JzIS/exec",
         {
           method: "POST",
           body: formData,
@@ -132,54 +148,85 @@ export function Contact() {
                   </div>
                 </div>
 
-                <div>
-                  <label htmlFor="company" className="block text-sm font-medium text-navy">
-                    {formFields.company.label}
-                  </label>
-                  <input
-                    id="company"
-                    name="company"
-                    type="text"
-                    placeholder={formFields.company.placeholder}
-                    className="mt-2 w-full rounded-lg border border-border bg-cream px-4 py-3 text-sm transition-colors focus:border-navy/30 focus:outline-none focus:ring-2 focus:ring-warm/20"
-                  />
+                <div className="grid gap-6 sm:grid-cols-2">
+                  <div>
+                    <label htmlFor="phone" className="block text-sm font-medium text-navy">
+                      {formFields.phone.label}
+                    </label>
+                    <input
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      required
+                      placeholder={formFields.phone.placeholder}
+                      className="mt-2 w-full rounded-lg border border-border bg-cream px-4 py-3 text-sm transition-colors focus:border-navy/30 focus:outline-none focus:ring-2 focus:ring-warm/20"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="company" className="block text-sm font-medium text-navy">
+                      {formFields.company.label}
+                    </label>
+                    <input
+                      id="company"
+                      name="company"
+                      type="text"
+                      placeholder={formFields.company.placeholder}
+                      className="mt-2 w-full rounded-lg border border-border bg-cream px-4 py-3 text-sm transition-colors focus:border-navy/30 focus:outline-none focus:ring-2 focus:ring-warm/20"
+                    />
+                  </div>
                 </div>
 
                 <div>
                   <label htmlFor="projectType" className="block text-sm font-medium text-navy">
                     {formFields.projectType.label}
                   </label>
-                  <select
-                    id="projectType"
-                    name="projectType"
-                    required
-                    className="mt-2 w-full rounded-lg border border-border bg-cream px-4 py-3 text-sm transition-colors focus:border-navy/30 focus:outline-none focus:ring-2 focus:ring-warm/20"
-                    defaultValue=""
-                  >
-                    <option value="" disabled>
-                      Select a project type
-                    </option>
-                    {formFields.projectType.options.map((option) => (
-                      <option key={option} value={option}>
-                        {option}
+                  {isProjectTypeLocked ? (
+                    <>
+                      <input
+                        id="projectType"
+                        type="text"
+                        value={lockedProjectType ?? ''}
+                        readOnly
+                        aria-readonly="true"
+                        className="mt-2 w-full cursor-not-allowed rounded-lg border border-border bg-cream-dark/40 px-4 py-3 text-sm text-navy focus:outline-none"
+                      />
+                      <input type="hidden" name="projectType" value={lockedProjectType ?? ''} />
+                    </>
+                  ) : (
+                    <select
+                      id="projectType"
+                      name="projectType"
+                      required
+                      className="mt-2 w-full rounded-lg border border-border bg-cream px-4 py-3 text-sm transition-colors focus:border-navy/30 focus:outline-none focus:ring-2 focus:ring-warm/20"
+                      defaultValue=""
+                    >
+                      <option value="" disabled>
+                        Select a project type
                       </option>
-                    ))}
-                  </select>
+                      {formFields.projectType.options.map((option) => (
+                        <option key={option} value={option}>
+                          {option}
+                        </option>
+                      ))}
+                    </select>
+                  )}
                 </div>
 
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-navy">
-                    {formFields.message.label}
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    required
-                    rows={5}
-                    placeholder={formFields.message.placeholder}
-                    className="mt-2 w-full resize-y rounded-lg border border-border bg-cream px-4 py-3 text-sm transition-colors focus:border-navy/30 focus:outline-none focus:ring-2 focus:ring-warm/20"
-                  />
-                </div>
+                {!isProjectTypeLocked && (
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-medium text-navy">
+                      {formFields.message.label}
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      required
+                      rows={5}
+                      placeholder={formFields.message.placeholder}
+                      className="mt-2 w-full resize-y rounded-lg border border-border bg-cream px-4 py-3 text-sm transition-colors focus:border-navy/30 focus:outline-none focus:ring-2 focus:ring-warm/20"
+                    />
+                  </div>
+                )}
 
                 <Button
                   type="submit"
