@@ -19,6 +19,7 @@ export const navLinks: NavLink[] = [
   { label: 'Home', path: '/' },
   { label: 'Services', path: '/services' },
   { label: 'Case Studies', path: '/case-studies' },
+  { label: 'Blog', path: '/blog' },
   { label: 'About', path: '/about' },
   { label: 'Contact', path: '/contact' },
 ]
@@ -33,6 +34,7 @@ export const footerLinks = {
   company: [
     { label: 'About', path: '/about' },
     { label: 'Case Studies', path: '/case-studies' },
+    { label: 'Blog', path: '/blog' },
     { label: 'Contact', path: '/contact' },
     { label: 'Privacy Policy', path: '/privacy-policy' },
   ],

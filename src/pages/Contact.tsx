@@ -91,7 +91,7 @@ export function Contact() {
     return (
       <SectionContainer>
         <div className="mx-auto max-w-lg text-center">
-          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-cream-dark text-2xl text-warm">
+          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[linear-gradient(135deg,#8fae94_0%,#6f9276_100%)] text-2xl text-white shadow-[0_1px_0_rgba(255,255,255,0.4)_inset,0_10px_24px_-8px_rgba(30,42,59,0.35)]">
             ✓
           </div>
           <h1 className="mt-6 text-3xl font-semibold">{thankYouMessage.headline}</h1>

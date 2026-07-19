@@ -39,9 +39,9 @@ type ButtonProps = ButtonAsButton | ButtonAsLink | ButtonAsAnchor
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary:
-    'bg-navy text-cream hover:bg-navy-light border border-navy shadow-sm',
+    'text-cream border border-navy/60 bg-[linear-gradient(180deg,#2d3f56_0%,#1e2a3b_100%)] shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_8px_20px_-8px_rgba(30,42,59,0.5)] hover:shadow-[0_1px_0_rgba(255,255,255,0.18)_inset,0_14px_30px_-10px_rgba(30,42,59,0.55)] hover:-translate-y-0.5 active:translate-y-0',
   secondary:
-    'bg-surface text-navy border border-border hover:border-navy/30 hover:bg-cream-dark',
+    'bg-surface text-navy border border-border shadow-soft hover:border-navy/25 hover:-translate-y-0.5 active:translate-y-0',
   ghost: 'bg-transparent text-navy hover:bg-cream-dark border border-transparent',
 }
 
@@ -52,7 +52,7 @@ const sizeStyles: Record<ButtonSize, string> = {
 }
 
 const baseStyles =
-  'inline-flex items-center justify-center gap-2 rounded-lg font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-warm/50 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none'
+  'inline-flex items-center justify-center gap-2 rounded-full font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-warm/50 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none'
 
 /** Reusable button - renders as <button>, <Link>, or <a> depending on props */
 export function Button({

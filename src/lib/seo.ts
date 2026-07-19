@@ -1,4 +1,5 @@
 import { aboutPage } from '@/content/about'
+import { blogPage, blogPosts, getBlogPostBySlug } from '@/content/blog'
 import { caseStudies, caseStudiesPage, getCaseStudyBySlug } from '@/content/caseStudies'
 import { contactPage } from '@/content/contact'
 import { privacyPolicyPage } from '@/content/privacyPolicy'
@@ -69,6 +70,13 @@ export function getPageMeta(url: string): PageMeta {
         canonical,
         status: 200,
       }
+    case '/blog':
+      return {
+        title: `${blogPage.headline} | ${siteConfig.name}`,
+        description: blogPage.subheadline,
+        canonical,
+        status: 200,
+      }
     case '/contact':
       return {
         title: `${contactPage.headline} | ${siteConfig.name}`,
@@ -91,6 +99,20 @@ export function getPageMeta(url: string): PageMeta {
           return {
             title: `${study.title} | ${siteConfig.name}`,
             description: study.summary,
+            canonical,
+            status: 200,
+          }
+        }
+        return buildNotFoundMeta(canonical)
+      }
+
+      const blogMatch = pathname.match(/^\/blog\/([^/]+)$/)
+      if (blogMatch) {
+        const post = getBlogPostBySlug(blogMatch[1])
+        if (post) {
+          return {
+            title: `${post.title} | ${siteConfig.name}`,
+            description: post.excerpt,
             canonical,
             status: 200,
           }
@@ -179,7 +201,10 @@ export const staticRoutes = [
   '/about',
   '/services',
   '/case-studies',
+  '/blog',
   '/contact',
   '/privacy-policy',
   ...caseStudies.map((study) => `/case-studies/${study.slug}`),
+  ...blogPosts.map((post) => `/blog/${post.slug}`),
 ]
+

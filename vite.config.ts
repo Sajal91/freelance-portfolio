@@ -22,6 +22,8 @@ export default defineConfig(({ isSsrBuild }) => ({
             '/case-studies/social-media-automation-agent',
             '/case-studies/ai-design-automation-platform',
             '/case-studies/pushup-crew-app',
+            '/blog',
+            '/blog/5-signs-your-startup-needs-workflow-automation',
             '/contact',
             '/privacy-policy',
           ],

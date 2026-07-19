@@ -17,12 +17,12 @@ interface SectionContainerProps {
 const variantStyles = {
   default: 'bg-cream',
   alt: 'bg-cream-dark',
-  navy: 'bg-navy text-cream [&_h2]:text-cream [&_h3]:text-cream [&_p]:text-cream/80',
+  navy: 'bg-navy-gradient text-cream [&_h2]:text-cream [&_h3]:text-cream [&_p]:text-cream/80',
 }
 
 const sizeStyles = {
   md: 'max-w-4xl',
-  lg: 'max-w-5xl',
+  lg: 'max-w-6xl',
   xl: 'max-w-6xl',
 }
 

@@ -28,7 +28,7 @@ export function CaseStudies() {
                 <Card className="flex h-full flex-col">
                   <CaseStudyBadges tags={study.tags} highlight={study.highlight} limit={3} />
                   <h2 className="mt-4 text-lg font-semibold leading-snug">{study.title}</h2>
-                  <p className="mt-2 text-sm text-muted">{study.industry}</p>
+                  <p className="mt-2 text-sm text-muted ">{study.industry}</p>
                   <p className="mt-4 flex-1 text-sm leading-relaxed text-charcoal">
                     {study.summary}
                   </p>
