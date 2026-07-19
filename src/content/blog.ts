@@ -1,4 +1,7 @@
 import type { BlogPost } from '@/types/content'
+import workflowCover from '@/assets/blog/blog-workflow-cover.png'
+import workflowFlow from '@/assets/blog/blog-workflow-flow.png'
+import workflowStart from '@/assets/blog/blog-workflow-start.png'
 
 /** Blog listing page hero copy */
 export const blogPage = {
@@ -23,6 +26,10 @@ export const blogPosts: BlogPost[] = [
     readingTime: '6 min read',
     author: { name: 'Sajal Kapoor', role: 'Founder, The Automation Hub' },
     featured: true,
+    cover: {
+      src: workflowCover,
+      alt: 'Automated workflow connecting a form, CRM, invoice, email, and dashboard',
+    },
     body: [
       {
         type: 'paragraph',
@@ -66,6 +73,12 @@ export const blogPosts: BlogPost[] = [
         text: 'Automation does not have to mean a giant, risky "digital transformation" project. In practice, it usually means connecting the tools you already use so that information flows on its own and routine steps happen without anyone pressing a button.',
       },
       {
+        type: 'image',
+        src: workflowFlow,
+        alt: 'A form feeding a CRM record, an invoice, an email, and a dashboard through automated connections',
+        caption: 'A typical automated flow: one form submission ripples through your CRM, billing, email, and reporting - no manual hops.',
+      },
+      {
         type: 'list',
         items: [
           'A new form submission automatically creates a CRM record and assigns an owner.',
@@ -87,6 +100,12 @@ export const blogPosts: BlogPost[] = [
       {
         type: 'paragraph',
         text: 'You do not need to automate everything at once. The teams that get the most value start small, prove it works, and expand from there.',
+      },
+      {
+        type: 'image',
+        src: workflowStart,
+        alt: 'A short checklist of steps turning into an upward-rising stack of blocks',
+        caption: 'Start with one repetitive, error-prone workflow - then let each win compound into the next.',
       },
       {
         type: 'list',

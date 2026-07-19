@@ -31,6 +31,24 @@ function BlockRenderer({ block }: { block: BlogBlock }) {
           ))}
         </ul>
       )
+    case 'image':
+      return (
+        <figure className="mt-10">
+          <div className="overflow-hidden rounded-2xl border border-border/70 bg-surface shadow-float">
+            <img
+              src={block.src}
+              alt={block.alt}
+              loading="lazy"
+              className="aspect-video w-full object-cover"
+            />
+          </div>
+          {block.caption && (
+            <figcaption className="mt-3 text-center text-sm italic leading-relaxed text-muted">
+              {block.caption}
+            </figcaption>
+          )}
+        </figure>
+      )
     case 'callout':
       return (
         <div className="mt-8 rounded-2xl border border-warm/25 bg-[linear-gradient(135deg,rgba(232,196,168,0.35),rgba(154,143,196,0.15))] p-6 shadow-soft">
@@ -122,6 +140,21 @@ export function BlogPost() {
           </div>
         </div>
       </section>
+
+      {/* Cover image */}
+      {post.cover && (
+        <div className="mx-auto w-full max-w-6xl px-5 md:px-8">
+          <FadeIn>
+            <div className="-mt-2 overflow-hidden rounded-3xl border border-border/70 bg-surface shadow-float md:-mt-4">
+              <img
+                src={post.cover.src}
+                alt={post.cover.alt}
+                className="aspect-video w-full object-cover"
+              />
+            </div>
+          </FadeIn>
+        </div>
+      )}
 
       {/* Article body */}
       <SectionContainer variant="default" size="lg" className="pt-10! md:pt-12!">

@@ -73,6 +73,7 @@ export type BlogBlock =
   | { type: 'list'; items: string[] }
   | { type: 'callout'; title?: string; text: string }
   | { type: 'signs'; items: BlogSign[] }
+  | { type: 'image'; src: string; alt: string; caption?: string }
 
 export interface BlogPostPreview {
   slug: string
@@ -90,5 +91,7 @@ export interface BlogPostPreview {
 export interface BlogPost extends BlogPostPreview {
   /** Short standfirst shown under the title on the article page */
   standfirst: string
+  /** Optional cover image shown in the article header */
+  cover?: { src: string; alt: string }
   body: BlogBlock[]
 }
